@@ -12,6 +12,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이벤트 게시판</title>
     <%@ include file="../head.jsp" %>
+
+    <style>
+        img {width:100%; height:auto; margin-bottom: 20px;}
+        .img_tb {word-wrap: break-word}
+    </style>
 </head>
 <%
     Connection conn = null;
@@ -49,34 +54,35 @@
         <section class="page" id="page1">
             <div class="table_container">
                 <table class="board_tb">
-                    <thead>
+                    <tbody class="img_tb">
                     <tr>
-                        <th>글 번호</th>
-                        <th>글 제목</th>
-                        <th>진행 기한</th>
-                        <th>등록일</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <%
-                        int index = 0;
-                        for(Event event: eventList){
-                          index++;
-                        event.print();
-                    %>
-                    <tr>
-                        <td><%=index %></td>
-                        <td><a href="/event/eventing_get.jsp?eno=<%=event.getEno()%>"><%=event.getTitle()%></a></td>
                         <%
-                            if(event.getStartdate()!=null && event.getEnddate()!=null){ %>
-                            <td><%=event.getStartdate()%>~<%=event.getEnddate()%></td>
-                            <%} else{%>
-                            <td>&nbsp;</td>
-                            <%}%>
-                        <td><%=event.getRegdate()%></td>
-                        <td><%=event.getCnt()%></td>
+                            for(Event event: eventList){
+                                pageContext.setAttribute("event", event);
+                        %>
+                        <td><a href="/event/eventing_get.jsp?eno=<%=event.getEno()%>">
+                            <ul class="img">
+                                <li>
+                                    <%if(event.getImg_name()!=null){%>
+                                    <img src="/event/event_img/${event.img_name}.jpg" alt="">
+                                    <%} else{%>
+                                    <img src="/event/event_img/0.jpg" alt="img_not_found">
+                                    <%}%>
+                                </li>
+                                <li>
+                                    <%=event.getTitle()%>
+                                </li>
+                                <li>
+                                    <%
+                                        if(event.getStartdate()!=null && event.getEnddate()!=null){ %>
+                                    <td><%=event.getStartdate()%>~<%=event.getEnddate()%></td>
+                                    <%} else{%><%}%>
+                                </li>
+                            </ul>
+                        </a>
+                        </td>
+                        <%}%>
                     </tr>
-                    <%}%>
                     </tbody>
                 </table>
                 <script>

@@ -45,6 +45,15 @@ INSERT INTO gnj.event(title, content) VALUES("5", "content 5");
 INSERT INTO gnj.event(title, content) VALUES("6", "content 6");
 INSERT INTO gnj.event(title, content) VALUES("7", "content 7");
 
+INSERT INTO gnj.event(title, content) VALUES("더미 타이틀 1", "content 1");
+INSERT INTO gnj.event(title, content) VALUES("더미 타이틀 2", "content 2");
+INSERT INTO gnj.event(title, content) VALUES("더미 타이틀 3", "content 3");
+INSERT INTO gnj.event(title, content) VALUES("더미 타이틀 4", "content 4");
+INSERT INTO gnj.event(title, content) VALUES("더미 타이틀 5", "content 5");
+INSERT INTO gnj.event(title, content) VALUES("더미 타이틀 6", "content 6");
+INSERT INTO gnj.event(title, content) VALUES("더미 타이틀 7", "content 7");
+
+
 INSERT INTO gnj.event(STATUS, title, content) VALUES(false, "1", "content 1");
 INSERT INTO gnj.event(status, title, content) VALUES(false, "2", "content 2");
 INSERT INTO gnj.event(status, title, content) VALUES(false, "3", "content 3");

@@ -67,10 +67,11 @@
                 </ul>
             </li>
             <li class="item5">
-                <a href="brand.html" class="dp1">이벤트</a>
+                <a class="dp1">이벤트</a>
                 <ul class="sub">
                     <li><a href="/event/evented_list.jsp">지난 이벤트</a></li>
                     <li><a href="/event/eventing_list.jsp">이벤트</a></li>
+                    <li><a href="/event/admin_event_list.jsp">이벤트 관리자</a></li>
                 </ul>
             </li>
         </ul>

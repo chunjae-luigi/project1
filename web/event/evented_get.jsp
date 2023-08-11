@@ -5,6 +5,9 @@
 <%@ page import="com.chunjae.dto.*" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +15,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이벤트 게시판</title>
     <%@ include file="../head.jsp" %>
+    <style>
+        img {width:100%; height:auto; margin-bottom: 20px;}
+    </style>
 </head>
+
 <%
     Connection conn = null;
     PreparedStatement pstmt = null;
@@ -36,8 +43,10 @@
         } else{
             event = new Event(rs.getInt("eno"), rs.getBoolean("status"), ndf.format(rs.getDate("regdate")), null, null, rs.getString("title"), rs.getString("content"), rs.getString("img_name"), rs.getString("img_path"), rs.getInt("cnt"));
         }
+        request.setAttribute("event", event);
     }
     con.close(rs, pstmt, conn);
+
 %>
 <body>
 <div class="wrap">
@@ -60,6 +69,10 @@
                         <th>작성일</th>
                         <td><%=event.getRegdate()%></td>
                     </tr>
+                    <tr>
+                        <th>조회수</th>
+                        <td><%=event.getCnt()%></td>
+                    </tr>
                     <%
                         if(event.getStartdate()!=null && event.getEnddate()!=null){ %>
                     <tr>
@@ -68,16 +81,14 @@
                     <%}%>
                     </thead>
                     <tbody>
-                    <%if(event.getImg_path()!=null && event.getImg_name()!=null){%>
                     <tr>
-                        <td colspan="2"><img src=<%=event.getImg_path()%>+"/"+<%=event.getImg_name()%> alt=""></td>
+                        <td colspan="2">
+                            <%if(event.getImg_name()!=null){%>
+                            <img src="/event/event_img/${event.img_name}.jpg" alt="">
+                            <%}%>
+                            <%=event.getContent()%>
+                        </td>
                     </tr>
-                    <%}%>
-                    <tr>
-                        <td colspan="2"><%=event.getContent()%></td>
-                    </tr>
-
-
                     </tbody>
                 </table>
                 <script>
