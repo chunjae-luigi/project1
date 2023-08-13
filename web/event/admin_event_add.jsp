@@ -26,8 +26,8 @@
         <section class="page" id="page1">
             <div class="table_container">
                 <form action="admin_event_add_pro.jsp" method="post">
-                    <table class="board_tb">
-                        <thead>
+                    <table class="table tb2">
+                        <tbody>
                         <tr>
                             <th>글 제목</th>
                             <td><input type="text" name="title" id="title"></td>
@@ -44,8 +44,6 @@
                             <td><label for="startdate">시작일</label><input type="date" name="startdate" id="startdate"></td>
                             <td><label for="enddate">끝나는 일</label><input type="date" name="enddate" id="enddate"></td>
                         </tr>
-                        </thead>
-                        <tbody>
                         <tr>
                             <td colspan="2">
                                 <input type="file" accept=".jpg" name="file">

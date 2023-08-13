@@ -6,6 +6,7 @@
 <%@ page import="grownjoy.db.DBC" %>
 <%@ page import="grownjoy.db.MariaDBCon" %>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,7 +55,7 @@
         </div>
         <section class="page" id="page1">
             <div class="table_container">
-                <table class="board_tb">
+                <table class="table tb1">
                     <tbody class="img_tb">
                     <tr>
                         <%

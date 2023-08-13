@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이벤트 게시판</title>
+    <title>이벤트 관리</title>
     <%@ include file="../head.jsp" %>
 
     <style>
@@ -50,13 +50,13 @@
     </header>
     <div class="contents" id="contents">
         <div class="breadcrumb">
-            <p><a href="../">HOME</a> &gt; <span>공지사항 목록</span></p>
+            <p><a href="../">HOME</a> &gt; <span>이벤트 목록</span></p>
         </div>
         <section class="page" id="page1">
             <div class="table_container">
 
                 <form action="admin_event_delete.jsp">
-                    <table class="board_tb">
+                    <table class="table tb1">
                         <tbody class="img_tb">
                         <tr>
                             <%

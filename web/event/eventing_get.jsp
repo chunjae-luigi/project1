@@ -59,8 +59,8 @@
         </div>
         <section class="page" id="page1">
             <div class="table_container">
-                <table class="board_tb">
-                    <thead>
+                <table class="table tb2">
+                    <tbody>
                     <tr>
                         <th>글 제목</th>
                         <td><%=event.getTitle()%></td>
@@ -79,8 +79,6 @@
                         <td><%=event.getStartdate()%>~<%=event.getEnddate()%></td>
                     </tr>
                     <%}%>
-                    </thead>
-                    <tbody>
                     <tr>
                         <td colspan="2">
                             <%if(event.getImg_name()!=null){%>
