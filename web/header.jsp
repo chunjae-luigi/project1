@@ -35,8 +35,8 @@
             <li class="item4">
                 <a href="<%=headerPath %>/sample.jsp" class="dp1">이벤트</a>
                 <ul class="sub">
-                    <li><a href="<%=headerPath %>/sample.jsp">진행중인 이벤트</a></li>
-                    <li><a href="<%=headerPath %>/sample.jsp">종료된 이벤트</a></li>
+                    <li><a href="<%=headerPath %>/event/eventing_list.jsp">진행중인 이벤트</a></li>
+                    <li><a href="<%=headerPath %>/event/evented_list.jsp">종료된 이벤트</a></li>
                 </ul>
             </li>
         </ul>
