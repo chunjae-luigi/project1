@@ -1,4 +1,4 @@
-package com.chunjae.dto;
+package grownjoy.dto;
 
 public class Event {
   private int eno;
