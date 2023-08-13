@@ -35,3 +35,5 @@
 .pointColor3 {background-color:var(--third-color);}
 .sampleHr {margin:50px 0;}
 
+/* 게시판 페이지 여백 - 상민 추가 */
+.table_container {margin: auto 30px;}

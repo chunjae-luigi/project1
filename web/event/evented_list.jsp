@@ -12,9 +12,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이벤트 게시판</title>
+    <title>지난 이벤트</title>
     <%@ include file="../head.jsp" %>
-
+    <link rel="stylesheet" href="<%=headPath%>/css/sub.css">
     <style>
         img {width:100%; height:auto; margin-bottom: 20px;}
         .img_tb {word-wrap: break-word}
@@ -50,6 +50,9 @@
         <%@ include file="../header.jsp" %>
     </header>
     <div class="contents" id="contents">
+        <div class="sub">
+            <h2>지난 이벤트</h2>
+        </div>
         <div class="breadcrumb">
             <p><a href="../">HOME</a> &gt; <span>공지사항 목록</span></p>
         </div>

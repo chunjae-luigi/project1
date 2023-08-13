@@ -16,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이벤트 게시판</title>
     <%@ include file="../head.jsp" %>
+    <link rel="stylesheet" href="<%=headPath%>/css/sub.css">    <link rel="stylesheet" href="<%=headPath%>/css/sub.css">
     <style>
         img {width:100%; height:auto; margin-bottom: 20px;}
     </style>
@@ -53,6 +54,9 @@
         <%@ include file="../header.jsp" %>
     </header>
     <div class="contents" id="contents">
+        <div class="sub">
+            <h2>이벤트 관리</h2>
+        </div>
         <div class="breadcrumb">
             <p><a href="../">HOME</a> &gt; <span>공지사항 목록</span></p>
         </div>
