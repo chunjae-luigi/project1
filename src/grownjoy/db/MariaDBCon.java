@@ -5,7 +5,7 @@ public class MariaDBCon implements DBC {
     final String DRIVER = "org.mariadb.jdbc.Driver"; //클래스이름
     final String DNS = "localhost";
     final String PORT = "3306";
-    final String NAME = "edu";
+    final String NAME = "gnj";
     final String USER = "root";
     final String PASS = "1234";
     final String URL = "jdbc:mariadb://"+DNS+":"+PORT+"/"+NAME;

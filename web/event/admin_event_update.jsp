@@ -1,9 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
-<%@ page import="java.util.*" %>
-<%@ page import="com.chunjae.db.*" %>
-<%@ page import="com.chunjae.dto.*" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="grownjoy.dto.Event" %>
+<%@ page import="grownjoy.db.DBC" %>
+<%@ page import="grownjoy.db.MariaDBCon" %>
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -13,8 +13,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이벤트 게시판</title>
+    <title>이벤트 관리</title>
     <%@ include file="../head.jsp" %>
+    <link rel="stylesheet" href="<%=headPath%>/css/sub.css">
     <style>
         img {width:100%; height:auto; margin-bottom: 20px;}
     </style>
@@ -53,6 +54,9 @@
         <%@ include file="../header.jsp" %>
     </header>
     <div class="contents" id="contents">
+        <div class="sub">
+            <h2>이벤트 수정</h2>
+        </div>
         <div class="breadcrumb">
             <p><a href="../">HOME</a> &gt; <span>공지사항 목록</span></p>
         </div>
@@ -60,8 +64,8 @@
             <div class="table_container">
                 <form action="admin_event_update_pro.jsp" method="post">
                     <input type="hidden" name="eno" value="<%=event.getEno()%>">
-                    <table class="board_tb">
-                        <thead>
+                    <table class="table tb2">
+                        <tbody>
                         <tr>
                             <th>글 제목</th>
                             <td><input type="text" name="title" id="title" value="<%=event.getTitle()%>"></td>
@@ -90,8 +94,6 @@
                             <td><label for="startdate">시작일</label><input type="date" name="startdate" id="startdate"></td>
                             <td><label for="enddate">끝나는 일</label><input type="date" name="enddate" id="enddate"></td>
                         </tr>
-                        </thead>
-                        <tbody>
                         <tr>
                             <td colspan="2">
                                 <%if(event.getImg_name()!=null){%>

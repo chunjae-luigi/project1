@@ -1,9 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.*" %>
-<%@ page import="com.chunjae.db.*" %>
-<%@ page import="com.chunjae.dto.*" %>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="grownjoy.dto.Event" %>
+<%@ page import="grownjoy.db.MariaDBCon" %>
+<%@ page import="grownjoy.db.DBC" %>
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -15,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이벤트 게시판</title>
     <%@ include file="../head.jsp" %>
+    <link rel="stylesheet" href="<%=headPath%>/css/sub.css">    <link rel="stylesheet" href="<%=headPath%>/css/sub.css">
     <style>
         img {width:100%; height:auto; margin-bottom: 20px;}
     </style>
@@ -52,13 +54,16 @@
         <%@ include file="../header.jsp" %>
     </header>
     <div class="contents" id="contents">
+        <div class="sub">
+            <h2>이벤트 관리</h2>
+        </div>
         <div class="breadcrumb">
             <p><a href="../">HOME</a> &gt; <span>공지사항 목록</span></p>
         </div>
         <section class="page" id="page1">
             <div class="table_container">
-                <table class="board_tb">
-                    <thead>
+                <table class="table tb2">
+                    <tbody>
                     <tr>
                         <th>글 제목</th>
                         <td><%=event.getTitle()%></td>
@@ -85,8 +90,6 @@
                         <td><%=event.getStartdate()%>~<%=event.getEnddate()%></td>
                     </tr>
                     <%}%>
-                    </thead>
-                    <tbody>
                     <tr>
                         <td colspan="2">
                             <%if(event.getImg_name()!=null){%>
