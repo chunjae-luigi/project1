@@ -1,4 +1,4 @@
-package grownjoy.db;
+package com.grownjoy.db;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

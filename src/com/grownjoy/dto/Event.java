@@ -1,4 +1,4 @@
-package grownjoy.dto;
+package com.grownjoy.dto;
 
 public class Event {
   private int eno;
