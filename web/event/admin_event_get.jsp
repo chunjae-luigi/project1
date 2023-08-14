@@ -2,9 +2,9 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.*" %>
 <%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="grownjoy.dto.Event" %>
-<%@ page import="grownjoy.db.MariaDBCon" %>
-<%@ page import="grownjoy.db.DBC" %>
+<%@ page import="com.grownjoy.dto.Event" %>
+<%@ page import="com.grownjoy.db.MariaDBCon" %>
+<%@ page import="com.grownjoy.db.DBC" %>
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>

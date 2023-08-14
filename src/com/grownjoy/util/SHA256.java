@@ -1,4 +1,4 @@
-package grownjoy.util;
+package com.grownjoy.util;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

@@ -1,4 +1,4 @@
-package grownjoy.util;
+package com.grownjoy.util;
 
 import javax.crypto.*;
 import javax.crypto.spec.IvParameterSpec;
