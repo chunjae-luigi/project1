@@ -1,47 +1,50 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ page import="java.sql.*" %>
+<%@ page import="java.util.*" %>
+<%@ page import="com.chunjae.db.*" %>
+<%@ page import="com.chunjae.dto.*" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>그로우앤조이::자유게시판-등록하기</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항</title>
     <%@ include file="../head.jsp" %>
-    <link rel="stylesheet" href="<%=headPath%>/css/sub.css">
 </head>
+
+
 <body>
 <div class="wrap">
     <header class="hd" id="hd">
         <%@ include file="../header.jsp" %>
     </header>
-    <div  class="contents" id="contents">
-        <div class="sub">
-            <h2>자유게시판</h2>
-        </div>
+    <%
+        if(sid==null){
+            response.sendRedirect("/board/boardList.jsp");
+        }
+    %>
+    <div class="contents" id="contents">
         <div class="breadcrumb">
-            <p><a href="/"> HOME </a> &gt; <a href="<%=headerPath%>/board/listBoard.jsp"> 자유게시판 </a> &gt; <span> 자유게시판 등록 </span></p>
+            <p><a href="../">HOME</a> &gt; <span>공지사항</span></p>
         </div>
         <section class="page" id="page1">
-            <div class="page_wrap">
-                <h2 class="page_tit">자유게시판 등록하기</h2>
-                <form action="addBoardPro.jsp" method="post">
-                    <input type="hidden" value="2" name="boardType" id="boardType">
-                    <table class="table tb2">
-                        <tbody>
-                        <tr>
-                            <th><label for="title">자유게시판 제목</label></th>
-                            <td><input type="text" class="inData" name="title" id="title" required></td>
-                        </tr>
-                        <tr>
-                            <th><label for="content">자유게시판 내용</label></th>
-                            <td>
-                                <textarea name="content" id="content" cols="80" rows="10" maxlength="990" class="inData"></textarea>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <div class="btn_group">
-                        <button type="submit" class="inBtn inBtn1">등록하기</button>
-                    </div>
-                </form>
-            </div>
+            <form action="addBoardPro.jsp" id="update_form" method="post">
+                <table class="board_tb">
+                    <thead>
+                    <tbody>
+                    <tr>
+                        <th>글제목</th>
+                        <td><input class="indata" type="text" name="title" id="title" placeholder="글 제목을 입력"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <textarea name="new_content" id="new_content" autofocus style="padding: 15px; width:100%; height: 60vh;" placeholder="글 내용 입력"></textarea>
+                <%if(sid!=null && sid.equals("admin")){%>
+                <input type="submit" value="작성완료" class="inbtn">
+                <%}%>
+            </form>
         </section>
     </div>
     <footer class="ft" id="ft">
