@@ -4,7 +4,7 @@
     String sid = session.getAttribute("id")!=null ? (String) session.getAttribute("id") : null;
 %>
 <div class="hd_wrap" id="hdWrap">
-    <a href="/" class="logo">
+    <a href="<%=headerPath %>/" class="logo">
         <img src="<%=headerPath %>/image/common/logo.png" alt="그로우앤조이 로고타입">
     </a>
     <nav class="gnb" id="hdGnb">
@@ -25,18 +25,18 @@
                 </ul>
             </li>
             <li class="item3">
-                <a href="<%=headerPath %>/sample.jsp" class="dp1">커뮤니티</a>
+                <a href="<%=headerPath %>/board/listNotice.jsp" class="dp1">커뮤니티</a>
                 <ul class="sub">
-                    <li><a href="<%=headerPath %>/sample.jsp">공지사항</a></li>
-                    <li><a href="<%=headerPath %>/sample.jsp">자유게시판</a></li>
+                    <li><a href="<%=headerPath %>/board/listNotice.jsp">공지사항</a></li>
+                    <li><a href="<%=headerPath %>/board/listBoard.jsp">자유게시판</a></li>
                     <li><a href="<%=headerPath %>/sample.jsp">QnA</a></li>
                 </ul>
             </li>
             <li class="item4">
-                <a href="<%=headerPath %>/sample.jsp" class="dp1">이벤트</a>
+                <a href="<%=headerPath %>/event/eventing_list.jsp" class="dp1">이벤트</a>
                 <ul class="sub">
                     <li><a href="<%=headerPath %>/event/eventing_list.jsp">진행중인 이벤트</a></li>
-                    <li><a href="<%=headerPath %>/event/evented_list.jsp">종료된 이벤트</a></li>
+                    <li><a href="<%=headerPath %>/event/eventing_list.jsp">종료된 이벤트</a></li>
                 </ul>
             </li>
         </ul>
@@ -46,9 +46,10 @@
             <% if(sid!=null) { %>
             <li><a href="<%=headerPath %>/member/logout.jsp">로그아웃</a></li>
             <li><a href="<%=headerPath %>/member/mypage.jsp">마이페이지</a></li>
-            <li><a href="<%=headerPath %>/company03.jsp">오시는 길</a></li>
             <% if(sid.equals("admin")) { %>
-            <li><a href="<%=headerPath %>/admin/index.jsp">관리자페이지</a></li>
+            <li><a href="<%=headerPath %>/admin/memberList.jsp">관리자페이지</a></li>
+            <% } else { %>
+            <li><a href="<%=headerPath %>/company03.jsp">오시는 길</a></li>
             <% } %>
             <% } else { %>
             <li><a href="<%=headerPath %>/member/login.jsp">로그인</a></li>
