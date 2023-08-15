@@ -1,10 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
-<%@ page import="java.sql.*" %>
-<%@ page import="java.util.*" %>
-<%@ page import="com.chunjae.db.*" %>
-<%@ page import="com.chunjae.dto.*" %>
-<%@ page import="java.text.SimpleDateFormat" %>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +21,7 @@
     %>
     <div class="contents" id="contents">
         <div class="breadcrumb">
-            <p><a href="../">HOME</a> &gt; <span>공지사항</span></p>
+            <p><a href="/"> HOME </a> &gt; <a href="<%=headerPath%>/board/listBoard.jsp"> 자유게시판 </a> &gt; <span> 자유게시판 등록 </span></p>
         </div>
         <section class="page" id="page1">
             <form action="addBoardPro.jsp" id="update_form" method="post">

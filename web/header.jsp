@@ -27,9 +27,9 @@
             <li class="item3">
                 <a href="<%=headerPath %>/sample.jsp" class="dp1">커뮤니티</a>
                 <ul class="sub">
-                    <li><a href="<%=headerPath %>/sample.jsp">공지사항</a></li>
-                    <li><a href="<%=headerPath %>/sample.jsp">자유게시판</a></li>
-                    <li><a href="<%=headerPath %>/sample.jsp">QnA</a></li>
+                    <li><a href="<%=headerPath %>/board/listNotice.jsp">공지사항</a></li>
+                    <li><a href="<%=headerPath %>/board/listBoard.jsp">자유게시판</a></li>
+                    <li><a href="<%=headerPath %>/qna/qnaList.jsp">QnA</a></li>
                 </ul>
             </li>
             <li class="item4">
@@ -47,8 +47,6 @@
             <li><a href="<%=headerPath %>/member/logout.jsp">로그아웃</a></li>
             <li><a href="<%=headerPath %>/member/mypage.jsp">마이페이지</a></li>
             <li><a href="<%=headerPath %>/company03.jsp">오시는 길</a></li>
-            <% if(sid.equals("admin")) { %>
-            <li><a href="<%=headerPath %>/admin/index.jsp">관리자페이지</a></li>
             <% } %>
             <% } else { %>
             <li><a href="<%=headerPath %>/member/login.jsp">로그인</a></li>
