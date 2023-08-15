@@ -54,7 +54,7 @@
     %>
     <div class="contents" id="contents">
         <div class="breadcrumb">
-            <p><a href="../">HOME</a> &gt; <span>공지사항</span></p>
+            <p><a href="/"> HOME </a> &gt; <a href="<%=headerPath%>/board/listNotice.jsp"> 커뮤니티 </a> &gt; <span> 자유게시판 </span></p>
         </div>
         <section class="page" id="page1">
             <div class="table_container">
