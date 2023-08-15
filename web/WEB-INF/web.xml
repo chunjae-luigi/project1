@@ -8,7 +8,6 @@
             <welcome-file>index.jsp</welcome-file>
             <welcome-file>default.jsp</welcome-file>
         </welcome-file-list>
-       <!--
         <error-page>
             <error-code>404</error-code>
             <location>/error/notFoundErrorPage.jsp</location>
@@ -17,5 +16,4 @@
             <exception-type>java.lang.Exception</exception-type>
             <location>/error/errorPage.jsp</location>
         </error-page>
-    -->
 </web-app>
