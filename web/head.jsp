@@ -56,6 +56,9 @@
 <!-- 필요한 플러그인 연결 -->
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 
+<link rel="stylesheet" href="<%=headPath%>/css/jquery.dataTables.css">
+<script src="<%=headPath%>/js/jquery.dataTables.js"></script>
+
 <!-- 불펌 방지 -->
 <script>
     document.oncontextmenu = function() { return false; }

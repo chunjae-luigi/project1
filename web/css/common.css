@@ -21,15 +21,17 @@ p {word-break:keep-all;line-height:1.2;font-size:18px;}
 }
 
 .table {margin:0 auto;}
-.table th, .table td {line-height:32px; padding-top:8px; padding-bottom:8px;border-bottom:1px solid #333; border-top:1px solid #333;}
-.table th {background-color:var(--main-color);color:#fff;}
+.table th, .table td {border-bottom:1px solid #333; border-top:1px solid #333;}
+.table th {background-color:var(--main-color);color:#fff;line-height:32px;padding:8px 0;}
+.table td {padding:14px 0;}
+/*.table td a {display:inline-block;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;word-wrap:normal;width:85%;}*/
 
 .tb1 {width:100%;}
 .tb1 td {text-align:center;}
-.tb1 td.txtLeft {text-align:left;}
+.tb1 td.txtLeft {text-align:left;padding-left:15px;}
 
 .tb2 {width:800px;}
-.tb2 th {width:30%;}
+.tb2 th {width:30%;padding-top:24px;vertical-align:top;}
 .tb2 td {padding-left:15px;}
 
 .btn_group {margin:20px 0 0;text-align:right;}
@@ -38,6 +40,9 @@ p {word-break:keep-all;line-height:1.2;font-size:18px;}
 .inBtn:hover, .inBtn:active {box-shadow:2px 2px 5px #333;}
 .inBtn1 {background-color:var(--main-color);}
 .inBtn2 {background-color:var(--sub-color);}
+
+.inData {display:inline-block;width:calc(100% - 15px);height:48px;line-height:48px;text-indent:14px;font-size:18px;}
+textarea.inData {min-height:150px;}
 
 .ul_type01 li {position:relative;padding-left:10px;color:#333;line-height:1.8;font-size:15px;}
 .ul_type01 li:before {position:absolute;content:"";display:block;background:#333;width:5px;height:1px;top:50%;margin-top:-0.5px;left:0;}
