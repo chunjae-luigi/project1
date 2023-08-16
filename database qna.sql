@@ -66,10 +66,8 @@ SELECT * FROM qnalist WHERE qno=?;
 
 
 
-
 -- 기존 테이블 삭제 시 현재 테이블을 참조하는 테이블도 삭제
 DROP TABLE IF EXISTS qna;
-
 
 
 
@@ -77,21 +75,19 @@ DROP TABLE IF EXISTS qna;
 -- lev가 0이면 질문 / lev가 1이면 답변
 -- par : 질문의 글번호
 
+-- 질문
+INSERT INTO qna(title, content, author, lev) VALUES('초3 대상 자기주도학습 과정 추천문의', '테스트 중입니다 질문질문','lee',0);
+UPDATE qna SET par=qno WHERE lev=0 AND qno=1;
 
-INSERT INTO qna(title, content, author, lev) VALUES('질문1', '초3 대상 자기주도학습 과정 추천문의','lee',0);
-UPDATE qna SET par=qno WHERE lev=0;
+INSERT INTO qna(title, content, author, lev) VALUES('그로우앤조이 뜻이 무엇인가요?', '테스트 중입니다 질문질문','park',0);
+UPDATE qna SET par=qno WHERE lev=0 AND qno=2;
 
-INSERT INTO qna(title, content, author, lev) VALUES('질문2', '그로우앤조이 뜻이 무엇인가요?','park',0);
-
-
-
+-- 답변
 INSERT INTO qna(title, content, author, lev, par) VALUES ('질문1에 대한 답변', 'http://www.milkt.co.kr/ 가정에서 학습 가능한 천재교육의 밀크T가 있습니다.','admin',1,1);
 
-INSERT INTO qna(title, content, author, lev, par) VALUES ('질문2에 대한 답변', 'Grow&Joy는 학생들의 성장과 개발(Grow)을 도모하면서도 즐거움(Joy)과 긍정적인 에너지를 함께 전달하는 교육 회사를 의미합니다.','admin',1,3);
+INSERT INTO qna(title, content, author, lev, par) VALUES ('질문2에 대한 답변', 'Grow&Joy는 학생들의 성장과 개발(Grow)을 도모하면서도 즐거움(Joy)과 긍정적인 에너지를 함께 전달하는 교육 회사를 의미합니다.','admin',1,2);
 
 
-
-INSERT INTO qna(title, content, author, lev, par) VALUES ('test', '테스트입니다.','admin',1,5);
 
 
 SELECT * FROM MEMBER;
@@ -102,19 +98,12 @@ SELECT * FROM qnalist;
 
 
 COMMIT;
-
+COMMIT;
+COMMIT;
 COMMIT;
 
-COMMIT;
-
-COMMIT;
-
-
-
-SELECT * FROM qna ORDER BY par DESC, lev ASC, qno ASC;
-
+-- par가 같은 값인 것끼리 묶어서 정렬
+SELECT * FROM qna ORDER BY par DESC, lev ASC, qno ASC ;
 
 -- 부모글(질문) + 답변 그룹화
 SELECT 컬럼 FROM 테이블 WHERE 조건식 GROUP BY 그룹화할 컬럼;
-
-GROUP BY 

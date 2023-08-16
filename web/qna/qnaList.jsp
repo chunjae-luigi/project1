@@ -16,7 +16,7 @@
     conn = con.connect();
 
     //3. SQL을 실행하여 결과셋(ResultSet) 받아오기
-    String sql = "select a.qno as qno, a.title AS title, a.content AS content, a.author AS author, a.resdate AS resdate, a.cnt as cnt, a.lev AS lev, a.par AS par, secret AS secret, b.name as name from qna a, member b where a.author = b.id order by a.qno ASC;";
+    String sql = "select a.qno as qno, a.title AS title, a.content AS content, a.author AS author, a.resdate AS resdate, a.cnt as cnt, a.lev AS lev, a.par AS par, secret AS secret, b.name as name from qna a, member b where a.author = b.id ORDER BY par DESC, lev ASC, qno ASC ;";
     pstmt = conn.prepareStatement(sql);
     rs = pstmt.executeQuery();
 

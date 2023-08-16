@@ -15,8 +15,8 @@ p {word-break:keep-all;line-height:1.2;font-size:18px;}
 
 /* 대표색 */
 :root {
-    --main-color:#43b05c;
-    --sub-color:#ff8300;
+    --main-color: #e33b4d;
+    --sub-color:#EFB305;
     --third-color:#7f7f7f;
 }
 
