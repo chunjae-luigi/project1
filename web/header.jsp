@@ -20,7 +20,7 @@
             <li class="item2">
                 <a href="<%=headerPath %>/sample.jsp" class="dp1">조이서비스</a>
                 <ul class="sub">
-                    <li><a href="<%=headerPath %>/sample.jsp">도서</a></li>
+                    <li><a href="<%=headerPath %>/bookbook/Booklit.jsp">도서</a></li>
                     <li><a href="<%=headerPath %>/service.jsp">서비스</a></li>
                 </ul>
             </li>
@@ -29,7 +29,7 @@
                 <ul class="sub">
                     <li><a href="<%=headerPath %>/board/listNotice.jsp">공지사항</a></li>
                     <li><a href="<%=headerPath %>/board/listBoard.jsp">자유게시판</a></li>
-                    <li><a href="<%=headerPath %>/sample.jsp">QnA</a></li>
+                    <li><a href="<%=headerPath %>/qna/qnaList.jsp">QnA</a></li>
                 </ul>
             </li>
             <li class="item4">

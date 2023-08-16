@@ -3,9 +3,10 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.*" %>
 <%@ page import="java.text.*" %>
-<%@ page import="com.chunjae.db.*" %>
-<%@ page import="java.util.Date" %>
-<%@ page import="com.chunjae.dto.Book" %>
+
+<%@ page import="com.grownjoy.db.*" %>
+<%@ page import="com.grownjoy.dto.*" %>
+
 <%
     Connection con = null;
     PreparedStatement pstmt = null;

@@ -1,86 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
-<%@ page import="com.grownjoy.db.*" %>
-<%@ page import="com.grownjoy.vo.*" %>
-<%@ page import="com.grownjoy.dto.*" %>
-<%@ page import="java.util.*" %>
-<%@ page import="java.sql.*" %>
-<%@ page import="java.text.SimpleDateFormat" %>
-<%
-    Connection conn = null;
-    PreparedStatement pstmt = null;
-    ResultSet rs = null;
-    String sql = "";
-
-    DBC con = new MariaDBCon();
-    conn = con.connect();
-
-    // 공지사항 불러오기
-    List<Board> noticeList = new ArrayList<>();
-    try {
-        sql = "select * from boardList where boardType = ? limit 4";
-        pstmt = conn.prepareStatement(sql);
-        pstmt.setInt(1, 1);
-        rs = pstmt.executeQuery();
-        while (rs.next()) {
-            Board bd = new Board();
-            bd.setBno(rs.getInt("bno"));
-            bd.setTitle(rs.getString("title"));
-            bd.setResdate(rs.getString("resdate"));
-            bd.setCnt(rs.getInt("cnt"));
-            noticeList.add(bd);
-        }
-    } catch (SQLException e) {
-        System.out.println("공지사항 글 불러오기 SQL 문 오류");
-    } finally {
-        rs.close();
-        pstmt.close();
-    }
-
-    // 자유게시판 불러오기
-    List<Board> boardList = new ArrayList<>();
-    try {
-        sql = "select * from boardList where boardType = ? limit 4";
-        pstmt = conn.prepareStatement(sql);
-        pstmt.setInt(1, 2);
-        rs = pstmt.executeQuery();
-        while (rs.next()) {
-            Board bd = new Board();
-            bd.setBno(rs.getInt("bno"));
-            bd.setTitle(rs.getString("title"));
-            bd.setResdate(rs.getString("resdate"));
-            bd.setCnt(rs.getInt("cnt"));
-            boardList.add(bd);
-        }
-    } catch (SQLException e) {
-        System.out.println("자유게시판 글 불러오기 SQL 문 오류");
-    } finally {
-        rs.close();
-        pstmt.close();
-    }
-
-    // 이벤트 게시판 불러오기
-    List<Event> eventList = new ArrayList<>();
-    SimpleDateFormat ndf = new SimpleDateFormat("yyyy년 MM월 dd일");
-
-    try {
-        sql = "select * from event where status=true limit 7";
-        pstmt = conn.prepareStatement(sql);
-        rs = pstmt.executeQuery();
-
-        while(rs.next()){
-            if(rs.getDate("startdate")!=null && rs.getDate("enddate")!=null){
-                eventList.add(new Event(rs.getInt("eno"), rs.getBoolean("status"), ndf.format(rs.getDate("regdate")), ndf.format(rs.getDate("startdate")), ndf.format(rs.getDate("enddate")), rs.getString("title"), rs.getString("content"), rs.getString("img_name"), rs.getString("img_path"), rs.getInt("cnt")));
-            } else{
-                eventList.add(new Event(rs.getInt("eno"), rs.getBoolean("status"), ndf.format(rs.getDate("regdate")), null, null, rs.getString("title"), rs.getString("content"), rs.getString("img_name"), rs.getString("img_path"), rs.getInt("cnt")));
-            }
-        }
-    } catch (SQLException e) {
-        System.out.println("이벤트 SQL 구문 오류");
-    } finally {
-        con.close(rs, pstmt, conn);
-    }
-
-%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -166,59 +84,35 @@
         </script>
         <section class="page" id="page1">
             <div class="page_wrap">
-                <h2 class="page_tit"><span class="txtColor1">Grow</span> & <span class="txtColor2">Joy</span></h2>
-                <ul class="board_lst">
+                <h2 class="page_tit">Grow & Joy</h2>
+                <ul class="pic_lst">
                     <li class="item1">
-                        <div class="board_tit">
-                            <h3>공지사항</h3>
-                            <a href="<%=headerPath%>/board/listNotice.jsp" class="btn_more">+</a>
-                        </div>
-                        <ul class="board_con">
-                            <%
-                                if(noticeList.size() > 0){
-                                    for(Board bd : noticeList) {
-                                        String dateStr = bd.getResdate().substring(0, 10);
-                                        String title = "";
-                                        if(bd.getTitle().length() > 70) {
-                                            title = bd.getTitle().substring(69) + "...";
-                                        } else {
-                                            title = bd.getTitle();
-                                        }
-
-                            %>
-                            <li><a href="<%=headerPath %>/board/getNotice.jsp?bno=<%=bd.getBno() %>"><%=title %><span class="date"><%=dateStr %></span></a></li>
-                            <% } } else { %>
-                            <li class="no_date">
-                                등록된 공지사항이 없습니다.
-                            </li>
-                            <% } %>
-                        </ul>
+                        <a href="">
+                            <p class="pic_com">교육 관련 도서 정보</p>
+                            <h3 class="pic_tit">도서</h3>
+                            <span class="pic_arrow"></span>
+                        </a>
                     </li>
                     <li class="item2">
-                        <div class="board_tit">
-                            <h3>자유게시판</h3>
-                            <a href="<%=headerPath%>/board/listBoard.jsp" class="btn_more">+</a>
-                        </div>
-                        <ul class="board_con">
-                            <%
-                                if(boardList.size() > 0){
-                                    for(Board bd : boardList) {
-                                        String dateStr = bd.getResdate().substring(0, 10);
-                                        String title = "";
-                                        if(bd.getTitle().length() > 70) {
-                                            title = bd.getTitle().substring(69) + "...";
-                                        } else {
-                                            title = bd.getTitle();
-                                        }
-
-                            %>
-                            <li><a href="<%=headerPath %>/board/getBoard.jsp?bno=<%=bd.getBno() %>"><%=title %><span class="date"><%=dateStr %></span></a></li>
-                            <% } } else { %>
-                            <li class="no_date">
-                                등록된 자유게시판이 없습니다.
-                            </li>
-                            <% } %>
-                        </ul>
+                        <a href="">
+                            <p class="pic_com">공지사항</p>
+                            <h3 class="pic_tit">공지사항</h3>
+                            <span class="pic_arrow"></span>
+                        </a>
+                    </li>
+                    <li class="item3">
+                        <a href="">
+                            <p class="pic_com">자유게시판</p>
+                            <h3 class="pic_tit">자유게시판</h3>
+                            <span class="pic_arrow"></span>
+                        </a>
+                    </li>
+                    <li class="item4">
+                        <a href="">
+                            <p class="pic_com">QnA</p>
+                            <h3 class="pic_tit">QnA</h3>
+                            <span class="pic_arrow"></span>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -227,34 +121,61 @@
             <div class="page_wrap">
                 <h2 class="page_tit">이벤트</h2>
                 <p class="page_com">그로우앤조이에서 진행된 이벤트를 소개합니다.</p>
-                <% if(eventList.size() > 0) { %>
                 <div class="sl-btn-box">
                     <button type="button" class="btn next">&gt;</button>
                     <button type="button" class="btn prev">&lt;</button>
                 </div>
-                <% } %>
                 <div class="slide_box">
                     <ul class="card_lst">
-                        <%
-                            if(eventList.size() > 0) {
-                                int num = 1;
-                                for(Event event: eventList){ %>
-                        <li class="item<%=num %>">
-                            <a href="<%=headerPath%>/event/eventing_get.jsp?eno=<%=event.getEno()%>">
-                                <div class="thumb_box" style="background-image:url('<%=headerPath%>/event/event_img/<%=num %>.jpg')"></div>
-                                <p class="thumb_tit"><%=event.getTitle() %></p>
-                                <span class="thumb_date">
-                                <% if(event.getStartdate()!=null && event.getEnddate()!=null){ %>
-                                    <%=event.getStartdate()%>~<%=event.getEnddate()%>
-                                <% } else { %>
-                                    2023-08-01 ~ 2023-08-16
-                                <% } %>
-                                </span>
+                        <li class="item1">
+                            <a href="">
+                                <div class="thumb_box"></div>
+                                <p class="thumb_tit">썸네일제목2 썸네일제목2 썸네일제목2 썸네일제목2 썸네일제목2 썸네일제목2 썸네일제목2썸네일제목2 썸네일제목2 썸네일제목2 썸네일제목2썸네일제목2썸네일제목2 썸네일제목2 </p>
+                                <div class="ico_box"><span class="ico item1"></span><span class="thumb_date">2023-07-18</span></div>
                             </a>
                         </li>
-                        <% num++; } } else { %>
-                        <li class="no_date">등록된 이벤트가 없습니다.</li>
-                        <% } %>
+                        <li class="item2">
+                            <a href="">
+                                <div class="thumb_box"></div>
+                                <p class="thumb_tit">썸네일제목2 썸네일제목2 썸네일제목2 썸네일제목2 썸네일제목2 썸네일제목2 썸네일제목2썸네일제목2 썸네일제목2 썸네일제목2 썸네일제목2썸네일제목2썸네일제목2 썸네일제목2 </p>
+                                <div class="ico_box"><span class="ico item1"></span><span class="thumb_date">2023-07-18</span></div>
+                            </a>
+                        </li>
+                        <li class="item3">
+                            <a href="">
+                                <div class="thumb_box"></div>
+                                <p class="thumb_tit">썸네일제목3</p>
+                                <div class="ico_box"><span class="ico item1"></span><span class="thumb_date">2023-07-18</span></div>
+                            </a>
+                        </li>
+                        <li class="item4">
+                            <a href="">
+                                <div class="thumb_box"></div>
+                                <p class="thumb_tit">썸네일제목4</p>
+                                <div class="ico_box"><span class="ico item2"></span><span class="thumb_date">2023-07-18</span></div>
+                            </a>
+                        </li>
+                        <li class="item5">
+                            <a href="">
+                                <div class="thumb_box"></div>
+                                <p class="thumb_tit">썸네일제목5</p>
+                                <div class="ico_box"><span class="ico item1"></span><span class="thumb_date">2023-07-18</span></div>
+                            </a>
+                        </li>
+                        <li class="item6">
+                            <a href="">
+                                <div class="thumb_box"></div>
+                                <p class="thumb_tit">썸네일제목6</p>
+                                <div class="ico_box"><span class="ico item2"></span><span class="thumb_date">2023-07-18</span></div>
+                            </a>
+                        </li>
+                        <li class="item7">
+                            <a href="">
+                                <div class="thumb_box"></div>
+                                <p class="thumb_tit">썸네일제목7</p>
+                                <div class="ico_box"><span class="ico item1"></span><span class="thumb_date">2023-07-18</span></div>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
