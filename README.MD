@@ -26,6 +26,9 @@
 ![시퀀스2](/readme/시퀀스다이어그램/Book_%EC%8B%9C%ED%80%80%EC%8A%A4.png)
 ![시퀀스3](/readme/시퀀스다이어그램/join_%EC%8B%9C%ED%80%80%EC%8A%A4.png)
 ![시퀀스4](/readme/시퀀스다이어그램/login%20%EC%8B%9C%ED%80%80%EC%8A%A4.png)
+![시퀀스4](/readme/시퀀스다이어그램/evented%20시퀀스.png)
+![시퀀스4](/readme/시퀀스다이어그램/eventing.png)
+![시퀀스4](/readme/시퀀스다이어그램/admin%20event%20시퀀스.png)
 
 
 ## 기능 구현
