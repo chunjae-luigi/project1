@@ -23,6 +23,17 @@ CREATE TABLE board(
 	cnt INT DEFAULT 0
 );
 
+
 DESC board;
 
 CREATE VIEW boardList AS (SELECT b.bno AS bno, b.boardType AS boardType, b.title AS title, b.content AS content, b.author AS author, b.resdate AS resdate, b.cnt as cnt, m.name AS name FROM board b, member m WHERE b.author=m.id order BY b.bno ASC);
+
+CREATE TABLE dat(
+    dno INT PRIMARY KEY AUTO_INCREMENT,
+    kno INT DEFAULT 0,
+    id VARCHAR(20),
+    content VARCHAR(500),
+    resdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP()
+    par INT(11));
+
+DESC dat;
