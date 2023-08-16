@@ -1,14 +1,14 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ page import="java.util.*" %>
 <%@ page import="java.sql.*" %>
-<%@ page import="com.grownjoy.vo.*" %>
+<%@ page import="com.grownjoy.dto.Dat" %>
 <%@include file="../encoding.jsp"%>
 <%
     String checkSid = (String) session.getAttribute("id");
 
     List<Dat> datList = new ArrayList<>();
     try {
-        sql = "select * from datList where par = ? order by dno desc";
+        sql = "select * from dat where par = ? order by dno desc";
         pstmt = conn.prepareStatement(sql);
         pstmt.setInt(1, bno);
         rs = pstmt.executeQuery();
@@ -18,7 +18,6 @@
             d.setDno(rs.getInt("dno"));
             d.setPar(rs.getInt("par"));
             d.setId(rs.getString("id"));
-            d.setName(rs.getString("name"));
             d.setContent(rs.getString("content"));
             d.setResdate(rs.getString("resdate"));
             datList.add(d);
@@ -40,9 +39,9 @@
     %>
         <li>
             <div class="dat_top">
-                <p class="dat_writer"><%=num %>. <%=d.getName()%><span class="dat_date"><%=d.getResdate()%></span></p>
+                <p class="dat_writer"><%=num %>. <%=d.getId() %><span class="dat_date"><%=d.getResdate() %></span></p>
                 <% if(checkSid!=null && (checkSid.equals("admin") || checkSid.equals(d.getId()))) {%>
-                <a href="../dat/deldat.jsp?dno=<%=d.getDno()%>&par=<%=d.getPar() %>" class="dat_btn">삭제하기</a>
+                <a href="../dat/deldat.jsp?dno=<%=d.getDno() %>&par=<%=d.getPar() %>" class="dat_btn">삭제하기</a>
                 <% } %>
             </div>
             <div class="dat_con">

@@ -50,6 +50,9 @@
 .dat_area .dat_btn {display:block;border:1px solid #333;border-radius:5px;background-color:#fff;box-sizing:border-box;cursor:pointer;}
 .dat_area .dat_btn:hover, .dat_area .dat_btn:active {background-color:var(--main-color);color:#fff;}
 
+
+#myTable_length, #dataTables_filter { margin-top:20px; margin-bottom:20px; }
+
 /* 디자인 가이드*/
 .pointColor {display:inline-block;width:200px;height:50px;}
 .pointColor1 {background-color:var(--main-color);}

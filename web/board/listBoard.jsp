@@ -51,10 +51,10 @@
     </header>
     <div  class="contents" id="contents">
         <div class="sub">
-            <h2>자유게시판</h2>
+            <h2>커뮤니티</h2>
         </div>
         <div class="breadcrumb">
-            <p><a href="/"> HOME </a> &gt; <span> 자유게시판 </span></p>
+            <p><a href="/"> HOME </a> &gt; <a href="/board/listNotice.jsp"> 커뮤니티 </a> &gt; <span> 자유게시판 </span></p>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">

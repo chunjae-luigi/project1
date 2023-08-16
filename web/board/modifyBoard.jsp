@@ -49,7 +49,7 @@
             <h2>자유게시판</h2>
         </div>
         <div class="breadcrumb">
-            <p><a href="/"> HOME </a> &gt; <a href="<%=headerPath%>/board/listBoard.jsp"> 자유게시판 </a> &gt; <span> 자유게시판 수정 </span></p>
+            <p><a href="/"> HOME </a> &gt; <a href="<%=headerPath%>/board/listNotice.jsp"> 커뮤니티 </a> &gt; <span> 자유게시판 </span></p>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">

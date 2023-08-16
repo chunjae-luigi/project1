@@ -1,23 +1,13 @@
 package com.grownjoy.dto;
 
 public class Book {
+
     private int bno;
+    private String title;
     private String author;
     private String date;
     private String company;
     private int price;
-    private String title;
-
-
-
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
     public int getBno() {
         return bno;
@@ -25,6 +15,14 @@ public class Book {
 
     public void setBno(int bno) {
         this.bno = bno;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getAuthor() {
@@ -63,11 +61,12 @@ public class Book {
     public String toString() {
         return "Book{" +
                 "bno=" + bno +
+                ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
                 ", date='" + date + '\'' +
                 ", company='" + company + '\'' +
                 ", price=" + price +
-                ", title='" + title + '\'' +
                 '}';
     }
+
 }

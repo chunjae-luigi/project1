@@ -45,7 +45,7 @@
                 <h2 class="page_tit">인사말</h2>
             </div>
             <div class="intro">
-                <h3 class="intro_tit">Grow & Joy</h3>
+                <h3 class="intro_tit"><img src="/image/sub/icon1.png" alt="별">Grow & Joy</h3>
                 <p class="intro_con">교육브랜드 Grow & Joy는
                     학생의 성장을 돕고 즐거움과 기쁨을 선사합니다. <br><br>
 

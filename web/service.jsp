@@ -31,10 +31,8 @@
             overflow: hidden; /* 내용이 넘치지 않도록 */
             height: 1000px;
             width: 1200px;
-            display: flex;
             align-items: flex-end;
             justify-content: center;
-            border: 1px solid #ddd;
             transition: transform 0.3s, box-shadow 0.3s;
             display: block;
             margin: 0 auto;
@@ -43,6 +41,7 @@
             width: 1000px;
             object-fit: cover;
             margin-left: 100px;
+            overflow: hidden;
         }
         .section .content {
             font-family: HakgyoansimWoojuR;
@@ -52,7 +51,6 @@
             text-align: center;
             width: 100%;
             box-sizing: border-box;
-
         }
         .section .content .tit {
             font-family: SBAggroB;
@@ -62,7 +60,6 @@
             text-align: center;
             width: 100%;
             box-sizing: border-box;
-
         }
         .section:hover {
             transform: translateY(-10px) scale(1.02); /* 약간 들쭉날쭉한 느낌으로 */

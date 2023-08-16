@@ -1,8 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="com.grownjoy.db.*" %>
-<%@ page import="com.grownjoy.dto.*" %>
-<%@ page import="com.grownjoy.vo.Dat" %>
+<%@ page import="com.grownjoy.dto.Dat" %>
 <%@ include file="../encoding.jsp" %>
 
 <%

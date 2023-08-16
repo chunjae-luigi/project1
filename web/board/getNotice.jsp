@@ -74,7 +74,7 @@
             <h2>공지사항</h2>
         </div>
         <div class="breadcrumb">
-            <p><a href="/"> HOME </a> &gt; <a href="<%=headerPath%>/board/listNotice.jsp"> 공지사항 </a> &gt; <span> 상세보기 </span></p>
+            <p><a href="/"> HOME </a> &gt; <a href="<%=headerPath%>/board/listNotice.jsp"> 커뮤니티 </a> &gt; <span> 공지사항 </span></p>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
