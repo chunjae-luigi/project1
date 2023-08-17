@@ -40,8 +40,8 @@
 ![시퀀스2](/readme/시퀀스다이어그램/Book_%EC%8B%9C%ED%80%80%EC%8A%A4.png)
 ![시퀀스3](/readme/시퀀스다이어그램/join_%EC%8B%9C%ED%80%80%EC%8A%A4.png)
 ![시퀀스4](/readme/시퀀스다이어그램/login%20%EC%8B%9C%ED%80%80%EC%8A%A4.png)
-![시퀀스5](/readme/시퀀스다이어그램/admin%20event%20%EC%8B%9C%ED%80%80%EC%8A%A4.drawio.png)
-![시퀀스6](/readme/시퀀스다이어그램/eventing%20%EC%8B%9C%ED%80%80%EC%8A%A4.drawio.png)
+![시퀀스5](/readme/시퀀스다이어그램/admin%20event%20%EC%8B%9C%ED%80%80%EC%8A%A4.png)
+![시퀀스6](/readme/시퀀스다이어그램/eventing%20%EC%8B%9C%ED%80%80%EC%8A%A4%20.png)
 ![시퀀스7](/readme/시퀀스다이어그램/evented%20%EC%8B%9C%ED%80%80%EC%8A%A4.drawio.png)
 
 ---
