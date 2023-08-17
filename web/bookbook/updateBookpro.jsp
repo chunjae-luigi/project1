@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%-- 1. 필요한 sql, db 패키지 임포트 --%>
 <%@ page import="java.sql.*" %>
-<%@ page import="com.chunjae.db.*" %>
+<%@ page import="com.grownjoy.db.*" %>
 <%
     /* 2. 인코딩 설정 및 보내온 데이터 받아오기 */
     request.setCharacterEncoding("UTF-8");

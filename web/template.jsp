@@ -1,8 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.*" %>
-<%@ page import="com.chunjae.db.*" %>
-<%@ page import="com.chunjae.dto.*" %>
+<%@ page import="com.grownjoy.db.*" %>
+<%@ page import="com.grownjoy.dto.*" %>
 
 <!DOCTYPE html>
 <html lang="en">

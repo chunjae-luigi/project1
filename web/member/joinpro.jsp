@@ -1,12 +1,14 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.*" %>
-<%@ page import="com.chunjae.db.*" %>
-<%@ page import="com.chunjae.dto.*" %>
+<%@ page import="com.grownjoy.db.*" %>
+<%@ page import="com.grownjoy.dto.*" %>
+<%@ page import="com.grownjoy.util.*" %>
 
 <%
     String id = request.getParameter("id");
     String pw = request.getParameter("pw");
+    pw = AES256.sha256(pw);
     String name = request.getParameter("name");
     String tel = request.getParameter("tel");
     String email = request.getParameter("email");
