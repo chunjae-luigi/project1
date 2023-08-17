@@ -5,9 +5,12 @@
 <%@ page import="com.grownjoy.dto.*" %>
 <%@ page import="com.grownjoy.db.DBC" %>
 <%@ page import="com.grownjoy.db.MariaDBCon" %>
+<%@ page import="com.grownjoy.util.AES256" %>
 <%
     String id = request.getParameter("id");
     String pw = request.getParameter("pw");
+
+    pw = AES256.sha256(pw);
 
     Connection conn = null;
     PreparedStatement pstmt = null;

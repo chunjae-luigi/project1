@@ -79,7 +79,7 @@
                     %>
                     <tr>
                         <td class="item1"><%=tot %></td>
-                        <td class="item2">
+                        <td class="item2 txtLeft">
                             <% if(q.getLev()==0) { %>
                             <a href="getQna.jsp?qno=<%=q.getQno()%>"><%=q.getTitle() %></a>
                             <% } else { %>

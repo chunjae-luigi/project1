@@ -18,6 +18,7 @@ p {word-break:keep-all;line-height:1.2;font-size:18px;}
     --main-color: #e33b4d;
     --sub-color:#EFB305;
     --third-color:#7f7f7f;
+    --admin-color:#64b772;
 }
 
 .table {margin:0 auto;}

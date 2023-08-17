@@ -18,6 +18,9 @@
     <style>
         img {width:10%; height:auto; margin-bottom: 20px;}
         .img_tb {word-wrap: break-word}
+
+        .card {display:inline-block;width:24%;margin-left:1%;}
+        .card:nth-child(4n + 1) {margin-left:0;}
     </style>
 </head>
 <%
@@ -52,11 +55,12 @@
     <div class="admin_contents" id="adminContents">
         <h2>이벤트 관리</h2>
         <section class="page"><div class="page_wrap"><form action="admin_event_delete.jsp">
+            <ul class="card_con">
             <%
                 for(Event event: eventList){
                     pageContext.setAttribute("event", event);
             %>
-            <div class="card" style="width: 18rem; margin: 10px;">
+            <li class="card">
                 <a href="/admin/admin_event_get.jsp?eno=<%=event.getEno()%>">
                     <%if(event.getImg_name()!=null){%>
                     <img class="card-img-top" src="/admin/event_img/${event.img_name}.jpg" alt="eventing">
@@ -72,8 +76,9 @@
                         </p>
                     </div>
                 </a>
-            </div>
+            </li>
             <%}%>
+            </ul>
         </form></div></section>
         <div class="btn_group">
             <a href="admin_event_add.jsp" class="inBtn inBtn1">이벤트 추가</a>

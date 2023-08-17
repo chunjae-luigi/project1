@@ -31,7 +31,8 @@
         .term ul li p .essential{color:#ed3535;}
         .term ul li a{position:relative; font-size:14px; color:#97999b;}
         .term ul li a:before{content:""; display:inline-block; position:absolute; bottom:-1px; left:0; width:100%; border-bottom:1px solid #97999b;}
-        .btn_area{display: flex; }
+
+        .inBtn.center{display:block;margin:10px auto 0;width:80%;background-color:var(--third-color);}
     </style>
 </head>
 <body>
@@ -40,6 +41,9 @@
         <%@ include file="../header.jsp" %>
     </header>
     <div class="contents" id="contents">
+        <div class="sub">
+            <h2>회원가입</h2>
+        </div>
         <div class="breadcrumb">
             <p><a href="">HOME</a> &gt; <span>회원가입</span></p>
         </div>
@@ -68,14 +72,13 @@
                             </tr>
                             <tr>
                                 <th><label for="pw">비밀번호<span class="important">*</span></label></th>
-                                <td><input type="password" id="pw" name="pw" required>
-                                </td>
+                                <td><input type="password" id="pw" name="pw" required></td>
                                 <td class="use_btn" rowspan="2"><button type="button"  class="inBtn1" onclick="pwcheck()">비밀번호 확인</button></td>
                             </tr>
                             <tr>
                                 <th><label for="pwChk">비밀번호 확인<span class="important">*</span></label></th>
                                 <td><input type="password" id="pwChk" name="pwChk" required>
-                                    <button type="button"  class="inBtn inBtn1" onclick="togglePasswordVisibility('pw')">입력값 확인</button>
+                                    <button type="button"  class="inBtn inBtn1 center" onclick="togglePasswordVisibility('pw')">입력값 확인</button>
                                     <div id="checkResult1" class="check_result"></div></td>
                             </tr>
                             <tr>
@@ -89,9 +92,9 @@
                             </tbody>
                         </table>
 
-                        <div class="btn_area" style="display: flex; justify-content: center; align-items: center;">
-                            <a href="/" class="inBtn inBtn1" style="margin-right: 110px; width: 50px;">취소하기</a>
-                            <input type="submit" value="제출하기" class="inBtn inBtn1" style="margin-left: 350px;">
+                        <div class="btn_area" style="text-align:center;">
+                            <a href="/" class="inBtn inBtn1">취소하기</a>
+                            <input type="submit" value="제출하기" class="inBtn inBtn2">
                         </div>
                     </div>
                 </form>

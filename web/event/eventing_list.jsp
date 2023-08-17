@@ -12,8 +12,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이벤트 게시판</title>
     <%@ include file="../head.jsp" %>
     <link rel="stylesheet" href="<%=headPath%>/css/sub.css">
@@ -21,6 +19,9 @@
     <style>
         img {width:100%; height:auto; margin-bottom: 20px;}
         .img_tb {word-wrap: break-word}
+
+        .card {display:inline-block;width:24%;margin-left:1%;}
+        .card:nth-child(4n + 1) {margin-left:0;}
     </style>
 </head>
 <%
@@ -60,11 +61,12 @@
             <p><a href="../">HOME</a> &gt; <span>이벤트 목록</span></p>
         </div>
         <section class="page"><div class="page_wrap">
+            <ul class="card_con">
             <%
                 for(Event event: eventList){
                     pageContext.setAttribute("event", event);
             %>
-                <div class="card" style="width: 18rem; margin: 10px;">
+                <li class="card">
                     <a href="/event/eventing_get.jsp?eno=<%=event.getEno()%>">
                     <%if(event.getImg_name()!=null){%>
                     <img class="card-img-top" src="/event/event_img/${event.img_name}.jpg" alt="eventing">
@@ -81,9 +83,10 @@
                         </p>
                     </div>
                     </a>
-                </div>
+                </li>
 
             <%}%>
+            </ul>
         </div></section>
     </div>
     <footer class="ft" id="ft">

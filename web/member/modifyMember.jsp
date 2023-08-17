@@ -67,10 +67,6 @@
                             <td><input type="text" value="<%=mem.getId() %>" name="id" id="id" class="inData" readonly></td>
                         </tr>
                         <tr>
-                            <th><label for="pw">비밀번호</label></th>
-                            <td><input type="text" value="<%=mem.getPw() %>" name="pw" id="pw" class="inData" readonly></td>
-                        </tr>
-                        <tr>
                             <th><label for="name">이름</label></th>
                             <td><input type="text" value="<%=mem.getName() %>" name="name" id="name" class="inData" readonly></td>
                         </tr>
