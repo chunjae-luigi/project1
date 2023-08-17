@@ -6,6 +6,9 @@
 <%@ page import="com.grownjoy.db.DBC" %>
 <%@ page import="com.grownjoy.db.MariaDBCon" %>
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,53 +51,33 @@
     </header>
     <div class="admin_contents" id="adminContents">
         <h2>이벤트 관리</h2>
-        <div class="table_container">
-            <form action="admin_event_delete.jsp">
-                <table class="table tb1">
-                    <tbody class="img_tb">
-                    <%
-                        for(Event event: eventList){
-                            pageContext.setAttribute("event", event);
-                    %>
-                    <tr>
-                        <td>
-                            <a href="/admin/admin_event_get.jsp?eno=<%=event.getEno()%>">
-                                <ul class="img">
-                                    <li>
-                                        <%if(event.getImg_name()!=null){%>
-                                        <img src="/event/event_img/${event.img_name}.jpg" alt="">
-                                        <%} else{%>
-                                        <img src="/event/event_img/0.jpg" alt="img_not_found">
-                                        <%}%>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" name="isdelete" value="<%=event.getEno()%>"> <%=event.getTitle()%>
-                                    </li>
-                                    <li>
-                                        <%
-                                            if(event.getStartdate()!=null && event.getEnddate()!=null){ %>
-                                        <td><%=event.getStartdate()%>~<%=event.getEnddate()%></td>
-                                        <%} else{%>
-                                    </li>
-                                    <li><%=event.isStatus()%></li>
-                                    <%}%>
-                                </ul>
-                            </a>
-                        </td>
-                    </tr>
+        <section class="page"><div class="page_wrap"><form action="admin_event_delete.jsp">
+            <%
+                for(Event event: eventList){
+                    pageContext.setAttribute("event", event);
+            %>
+            <div class="card" style="width: 18rem; margin: 10px;">
+                <a href="/admin/admin_event_get.jsp?eno=<%=event.getEno()%>">
+                    <%if(event.getImg_name()!=null){%>
+                    <img class="card-img-top" src="/admin/event_img/${event.img_name}.jpg" alt="eventing">
+                    <%} else{%>
+                    <img class="card-img-top" src="/admin/event_img/0.jpg" alt="img_not_found">
                     <%}%>
-                    </tbody>
-                </table>
-                <script>
-                    $(document).ready( function () {
-                        $('#myTable').DataTable();
-                    });
-                </script>
-                <div class="btn_group">
-                    <a href="admin_event_add.jsp" class="inBtn inBtn1">이벤트 추가</a>
-                    <input type="submit" class="inBtn inBtn2" value="이벤트 삭제">
-                </div>
-            </form>
+                    <div class="card-body">
+                        <h5 class="card-title"><input type="checkbox" name="isdelete" value="<%=event.getEno()%>"> <%=event.getTitle()%></h5>
+                        <p class="card-text">
+                            <% if(event.getStartdate()!=null && event.getEnddate()!=null){ %>
+                            <%=event.getStartdate()%> <br>~<%=event.getEnddate()%>
+                            <%}%>
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <%}%>
+        </form></div></section>
+        <div class="btn_group">
+            <a href="admin_event_add.jsp" class="inBtn inBtn1">이벤트 추가</a>
+            <input type="submit" class="inBtn inBtn2" value="이벤트 삭제">
         </div>
     </div>
 </div>

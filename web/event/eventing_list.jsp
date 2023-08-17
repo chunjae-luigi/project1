@@ -6,6 +6,9 @@
 <%@ page import="com.grownjoy.db.DBC" %>
 <%@ page import="com.grownjoy.db.MariaDBCon" %>
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,49 +57,34 @@
             <h2>진행 중인 이벤트</h2>
         </div>
         <div class="breadcrumb">
-            <p><a href="../">HOME</a> &gt; <span>공지사항 목록</span></p>
+            <p><a href="../">HOME</a> &gt; <span>이벤트 목록</span></p>
         </div>
-        <section class="page" id="page1">
-            <div class="table_container">
-                <table class="table tb1">
-                    <tbody class="img_tb">
-                    <tr>
-                        <%
-                            for(Event event: eventList){
-                                pageContext.setAttribute("event", event);
-                        %>
-                        <td><a href="/event/eventing_get.jsp?eno=<%=event.getEno()%>">
-                            <ul class="img">
-                                <li>
-                                    <%if(event.getImg_name()!=null){%>
-                                    <img src="/event/event_img/${event.img_name}.jpg" alt="">
-                                    <%} else{%>
-                                    <img src="/event/event_img/0.jpg" alt="img_not_found">
-                                    <%}%>
-                                </li>
-                                <li>
-                                    <%=event.getTitle()%>
-                                </li>
-                                <li>
-                                    <%
-                                        if(event.getStartdate()!=null && event.getEnddate()!=null){ %>
-                                    <td><%=event.getStartdate()%>~<%=event.getEnddate()%></td>
-                                    <%} else{%><%}%>
-                                </li>
-                            </ul>
-                        </a>
-                        </td>
-                        <%}%>
-                    </tr>
-                    </tbody>
-                </table>
-                <script>
-                    $(document).ready( function () {
-                        $('#myTable').DataTable();
-                    });
-                </script>
-            </div>
-        </section>
+        <section class="page"><div class="page_wrap">
+            <%
+                for(Event event: eventList){
+                    pageContext.setAttribute("event", event);
+            %>
+                <div class="card" style="width: 18rem; margin: 10px;">
+                    <a href="/event/eventing_get.jsp?eno=<%=event.getEno()%>">
+                    <%if(event.getImg_name()!=null){%>
+                    <img class="card-img-top" src="/event/event_img/${event.img_name}.jpg" alt="eventing">
+                    <%} else{%>
+                    <img class="card-img-top" src="/event/event_img/0.jpg" alt="img_not_found">
+                    <%}%>
+                    <div class="card-body">
+                        <h5 class="card-title"><%=event.getTitle()%></h5>
+                        <p class="card-text">
+                            <% if(event.getStartdate()!=null && event.getEnddate()!=null){ %>
+                            <%=event.getStartdate()%> <br>~<%=event.getEnddate()%>
+                            <%} else{%> 진행중
+                            <%}%>
+                        </p>
+                    </div>
+                    </a>
+                </div>
+
+            <%}%>
+        </div></section>
     </div>
     <footer class="ft" id="ft">
         <%@ include file="../footer.jsp" %>

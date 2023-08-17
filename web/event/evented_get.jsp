@@ -83,6 +83,7 @@
                     <%
                         if(event.getStartdate()!=null && event.getEnddate()!=null){ %>
                     <tr>
+                        <th>이벤트 진행 기간</th>
                         <td><%=event.getStartdate()%>~<%=event.getEnddate()%></td>
                     </tr>
                     <%}%>
