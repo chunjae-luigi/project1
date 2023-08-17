@@ -1,8 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%-- 1. 필요한 라이브러리 가져오기 --%>
 <%@ page import="java.sql.*" %>
-<%@ page import="com.chunjae.db.*" %>
-<%@ page import="com.chunjae.dto.*" %>
+<%@ page import="com.grownjoy.db.*" %>
+<%@ page import="com.grownjoy.dto.*" %>
 <%
     Connection con = null;
     PreparedStatement pstmt = null;

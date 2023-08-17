@@ -1,10 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="java.util.*" %>
-<%@ page import="com.chunjae.db.*" %>
-<%@ page import="com.chunjae.dto.*" %>
-<%@ page import="com.chunjae.db.DBC" %>
-<%@ page import="com.chunjae.db.MariaDBCon" %>
+<%@ page import="com.grownjoy.db.*" %>
+<%@ page import="com.grownjoy.dto.*" %>
+<%@ page import="com.grownjoy.db.DBC" %>
+<%@ page import="com.grownjoy.db.MariaDBCon" %>
 <%
     String id = request.getParameter("id");
     String pw = request.getParameter("pw");
