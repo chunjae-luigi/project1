@@ -192,7 +192,7 @@
                     <% for(Book bk : bookList) { %>
                     <li>
                         <a href="/bookbook/getBook.jsp?bno=<%=bk.getBno()%>">
-                            <div class="thumb_box" style="background-image: url('/images/iiim<%=bk.getBno()%>.jpg');"></div>
+                            <div class="thumb_box" style="background-image: url('/image/book/iiim<%=bk.getBno()%>.jpg');"></div>
                             <p class="thumb_tit"><%=bk.getTitle()%></p>
                         </a>
                     </li>
