@@ -13,6 +13,10 @@ CREATE TABLE MEMBER(
 	PRIMARY KEY (id)
 );
 
+INSERT INTO member(id, pw, NAME, email) VALUES("admin", "1234", "admin", "admin@email");
+INSERT INTO member(id, pw, NAME, email) VALUES("kimIll", "1234", "kimIll", "kimIll@email");
+INSERT INTO member(id, pw, NAME, email) VALUES("kimE", "1234", "kimE", "kimE@email");
+
 -- board
 CREATE TABLE board(
 	bno INT(11) PRIMARY KEY AUTO_INCREMENT,   -- (게시글 번호) 자동 발생
@@ -23,6 +27,14 @@ CREATE TABLE board(
 	resdate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,   -- (등록일)
 	cnt INT DEFAULT 0   -- (조회수)
 );
+
+
+CREATE VIEW boardList AS (SELECT b.bno AS bno, b.boardType AS boardType, b.title AS title, b.content AS content, b.author AS author, b.resdate AS resdate, b.cnt as cnt, m.name AS name FROM board b, member m WHERE b.author=m.id order BY b.bno ASC);
+
+INSERT INTO board(boardType, title, content, author) VALUES(1, "공지사항1", "공지사항1", "admin");
+INSERT INTO board(boardType, title, content, author) VALUES(1, "공지사항2", "공지사항2", "admin");
+INSERT INTO board(boardType, title, content, author) VALUES(2, "자유게시글1", "자유게시글1", "kimIll");
+INSERT INTO board(boardType, title, content, author) VALUES(2, "자유게시글2", "자유게시글2", "kimE");
 
 -- dat
 CREATE TABLE dat(
@@ -86,3 +98,5 @@ INSERT INTO book(title) VALUES("도서 1");
 INSERT INTO book(title) VALUES("도서 2");
 INSERT INTO book(title) VALUES("도서 3");
 INSERT INTO book(title) VALUES("도서 4");
+
+COMMIT;
