@@ -8,13 +8,10 @@
 <%@ page import="com.grownjoy.util.AES256" %>
 <%
     String id = request.getParameter("id");
-    String pw = request.getParameter("pw");
-
-    pw = AES256.sha256(pw);
+    boolean adminYn = session.getAttribute("id").equals("admin");
 
     Connection conn = null;
     PreparedStatement pstmt = null;
-    ResultSet rs = null;
 
     DBC con = new MariaDBCon();
     conn = con.connect();
@@ -23,21 +20,22 @@
     }
 
     try {
-        String sql = "select * from member where id=? and pw=?";
+        String sql = "delete from member where id=?";
         pstmt = conn.prepareStatement(sql);
         pstmt.setString(1, id);
-        pstmt.setString(2, pw);
-        rs = pstmt.executeQuery();
-        if(rs.next()){
-            session.setAttribute("id", id);
-            session.setAttribute("name", rs.getString("name"));
-            response.sendRedirect("/");
+        int cnt = pstmt.executeUpdate();
+        if(cnt > 0){
+            if(adminYn) {
+                response.sendRedirect("/admin/memberList.jsp");
+            } else {
+                response.sendRedirect("/member/logout.jsp");
+            }
         } else {
-            out.println("<script>alert('아이디 또는 비밀번호를 잘못 입력하였습니다.');history.go(-1);</script>");
+            out.println("<script>alert('탈퇴 처리를 진행하지 못했습니다.');history.go(-1);</script>");
         }
     } catch(SQLException e) {
         System.out.println("SQL 구문이 처리되지 못했습니다.");
     } finally {
-        con.close(rs, pstmt, conn);
+        con.close(pstmt, conn);
     }
 %>

@@ -40,6 +40,11 @@
     <title>그로우앤조이::관리자페이지-회원관리</title>
     <%@ include file="../head.jsp" %>
     <link rel="stylesheet" href="<%=headPath%>/css/admin.css">
+    <style>
+        .num {width:5%;}
+        .etc {width:30%;}
+        .inBtn {padding:0 10px;}
+    </style>
 </head>
 <body>
 <div class="admin_wrap">
@@ -50,16 +55,14 @@
         <h2>회원 관리</h2>
         <div class="container">
             <table class="table tb1">
-                <colgroup>
-                    <col style="width:5%">
-                </colgroup>
                 <thead>
                     <tr>
-                        <th></th>
+                        <th class="num"></th>
                         <th>이름</th>
                         <th>아이디</th>
                         <th>전화번호</th>
                         <th>가입일</th>
+                        <th class="etc">비고</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -74,12 +77,16 @@
                 <tr>
                     <td class="num"><%=num %></td>
                     <td class="title txtLeft"><%=mem.getName() %></td>
-                    <td class="date"><%=mem.getId() %></td>
-                    <td class="date"><%=mem.getTel() %></td>
-                    <td class="num"><%=mem.getRegdate() %></td>
+                    <td class="id"><%=mem.getId() %></td>
+                    <td class="tel"><%=mem.getTel() %></td>
+                    <td class="date"><%=dateStr %></td>
+                    <td class="etc">
+                        <a href="memberUpdatePw.jsp?id=<%=mem.getId()%>" class="inBtn inBtn1">비밀번호 변경</a>
+                        <a href="../member/removeMemberPro.jsp?id=<%=mem.getId()%>" class="inBtn inBtn2">회원 탈퇴</a>
+                    </td>
                 </tr>
                 <%  num++; } } else { %>
-                <tr><td colspan="5">가입한 회원이 없습니다.</td></tr>
+                <tr><td colspan="6">가입한 회원이 없습니다.</td></tr>
                 <% } %>
                 </tbody>
             </table>
