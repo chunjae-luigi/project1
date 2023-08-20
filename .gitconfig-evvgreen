@@ -1,0 +1,12 @@
+[user]
+        name = evvgreen
+        email = 1889018@ewhain.net
+
+[credential]
+        helper = store
+
+[includeIf "gitdir:~/sangmin0816/"]
+	path = ~/.gitconfig-sangmin0816
+
+[includeIf "gitdir:~/evvgreen/"]
+	path = ~/.gitconfig-evvgreen
