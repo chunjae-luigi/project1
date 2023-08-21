@@ -9,11 +9,12 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이벤트 게시판</title>
     <%@ include file="../head.jsp" %>
     <link rel="stylesheet" href="<%=headPath%>/css/sub.css">
@@ -21,6 +22,9 @@
     <style>
         img {width:100%; height:auto; margin-bottom: 20px;}
         .img_tb {word-wrap: break-word}
+
+        .card {display:inline-block;width:24%;margin-left:1%;}
+        .card:nth-child(4n + 1) {margin-left:0;}
     </style>
 </head>
 <%
@@ -57,6 +61,7 @@
             <h2>진행 중인 이벤트</h2>
         </div>
         <div class="breadcrumb">
+            <p><a href="../">HOME</a> &gt; <span>이벤트 목록</span></p>
             <p><a href="../">HOME</a> &gt; <span>이벤트 목록</span></p>
         </div>
         <section class="page"><div class="page_wrap">

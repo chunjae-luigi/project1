@@ -1,0 +1,12 @@
+[user]
+        name = sangmin0816
+        email = sangmin990816@gmail.com
+
+[credential]
+        helper = store
+
+[includeIf "gitdir:~/sangmin0816/"]
+	path = ~/.gitconfig-sangmin0816
+
+[includeIf "gitdir:~/evvgreen/"]
+	path = ~/.gitconfig-evvgreen

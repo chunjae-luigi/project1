@@ -2,6 +2,7 @@
 <%@ page import="com.grownjoy.db.*" %>
 <%@ page import="com.grownjoy.dto.*" %>
 <%@ page import="java.sql.*" %>
+<%@ include file="../encoding.jsp" %>
 <%
     String id = request.getParameter("id");
     String tel = request.getParameter("tel");

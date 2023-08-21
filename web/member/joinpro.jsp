@@ -4,6 +4,7 @@
 <%@ page import="com.grownjoy.db.*" %>
 <%@ page import="com.grownjoy.dto.*" %>
 <%@ page import="com.grownjoy.util.*" %>
+<%@ include file="../encoding.jsp" %>
 
 <%
     String id = request.getParameter("id");

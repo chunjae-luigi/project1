@@ -1,0 +1,12 @@
+[user]
+        name = luigi-team
+        email = luigi_team@daum.net
+
+[credential]
+        helper = store
+
+[includeIf "gitdir:~/sangmin0816/"]
+	path = ~/.gitconfig-sangmin0816
+
+[includeIf "gitdir:~/evvgreen/"]
+	path = ~/.gitconfig-evvgreen

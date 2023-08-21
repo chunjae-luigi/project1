@@ -2,44 +2,10 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>회원약관</title>
     <%@ include file="../head.jsp" %>
-
-    <!-- 스타일 초기화 : reset.css 또는 normalize.css -->
-    <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
-
-    <!-- 필요한 폰트를 로딩 : 구글 웹 폰트에서 폰트를 선택하여 해당 내용을 붙여 넣기 -->
-    <link rel="stylesheet" href="../google.css">
-    <link rel="stylesheet" href="../fonts.css">
-
-    <!-- 필요한 플러그인 연결 -->
-    <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link rel="stylesheet" href="../common.css">
-    <link rel="stylesheet" href="../hd.css">
+    <link rel="stylesheet" href="<%=headPath%>/css/sub.css">
     <style>
-        /* 본문 영역 스타일 */
-        .contents { clear:both; min-height:100vh;
-            background-image: url("../images/bg_visual_overview.jpg");
-            background-repeat: no-repeat; background-position:center -250px; }
-        .contents::after { content:""; clear:both; display:block; width:100%; }
-
-        .page { clear:both; width: 100vw; height: 100vh; position:relative; }
-        .page::after { content:""; display:block; width: 100%; clear:both; }
-
-        .page_wrap { clear:both; width: 1200px; height: auto; margin:0 auto; }
-        .page_tit { font-size:48px; text-align: center; padding-top:1em; color:#fff;
-            padding-bottom: 2.4rem; }
-        .page_tit2 { font-size:30px; text-align: center; padding-top:1em; color:black;
-            padding-bottom: 2.4rem; font-weight: bold;}
-
-        .breadcrumb { clear:both;
-            width:1200px; margin: 0 auto; text-align: right; color:#fff;
-            padding-top: 28px; padding-bottom: 28px; }
-        .breadcrumb a { color:#fff; }
         .frm { clear:both; width:1200px; margin:0 auto; padding-top: 80px; }
 
         .tb1 { width:500px; margin:50px auto; }
@@ -61,7 +27,7 @@
         .agree_fr { width: 900px; margin: 20px auto; border:1px solid #eee;
             padding: 20px; overflow-y: auto;
             height: 250px; white-space: pre-wrap; }
-        .btn_fr{padding-left: 950px;}
+        .btn_fr{text-align:center;}
     </style>
 
     <link rel="stylesheet" href="../ft.css">
@@ -71,8 +37,11 @@
         <%@ include file="../header.jsp" %>
     </header>
     <div class="contents" id="contents">
+        <div class="sub">
+            <h2>회원가입</h2>
+        </div>
         <div class="breadcrumb">
-            <p><a href="">HOME</a> &gt; <span>회원약관</span></p>
+            <p><a href="/"> HOME </a> &gt; <span>회원약관</span></p>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
@@ -392,13 +361,12 @@
                     제 21 조 (분쟁의 해결)
                     회사와 이용자는 본 사이트 이용과 관련해 발생한 분쟁을 원만하게 해결하기 위하여 필요한 모든 노력을 해야 한다.
                     제1항의 규정에도 불구하고 동 분쟁으로 인하여 소송이 제기될 경우 동 소송은 회사의 본사 소재지를 관할하는 법원의 관할로 본다.
-                    <부칙>
+                    &lt;부칙&gt;
                         본 약관은 2023년 08월 15일부터 적용한다.
                 </div>
                 <div class="btn_fr">
                     <input type="checkbox" id="ck_item2" name="ck_item"> <label for="ck_item2">개인정보 수집 및 이용약관 동의</label><br><br><br>
-                    <button type="button" id="in_btn1" class="inbtn">다음 단계</button>
-
+                    <button type="button" id="in_btn1" class="inBtn inBtn1">다음 단계</button>
                 </div>
                 <script>
                     var in_btn1 = document.getElementById("in_btn1");

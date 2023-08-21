@@ -31,9 +31,6 @@
         }
     } catch (SQLException e) {
         System.out.println("공지사항 글 불러오기 SQL 문 오류");
-    } finally {
-        rs.close();
-        pstmt.close();
     }
 
     // 자유게시판 불러오기
@@ -53,9 +50,6 @@
         }
     } catch (SQLException e) {
         System.out.println("자유게시판 글 불러오기 SQL 문 오류");
-    } finally {
-        rs.close();
-        pstmt.close();
     }
 
     // 이벤트 게시판 불러오기

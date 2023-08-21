@@ -67,7 +67,7 @@
                     </tr>
                     <tr>
                         <th>비밀번호</th>
-                        <td><%=mem.getPw() %></td>
+                        <td>비밀번호 변경은 관리자에게 문의 부탁드립니다.</td>
                     </tr>
                     <tr>
                         <th>이름</th>
@@ -89,7 +89,7 @@
                 </table>
                 <div class="btn_group">
                     <a href="modifyMember.jsp?id=<%=myId %>" class="inBtn inBtn1">정보 수정</a>
-                    <a href="javascript:return false" class="inBtn inBtn2">회원 탈퇴</a>
+                    <a href="removeMemberPro.jsp?id=<%=mem.getId()%>" class="inBtn inBtn2">회원 탈퇴</a>
                 </div>
             </div>
         </section>
