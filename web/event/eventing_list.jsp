@@ -9,6 +9,9 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,14 +62,14 @@
         </div>
         <div class="breadcrumb">
             <p><a href="../">HOME</a> &gt; <span>이벤트 목록</span></p>
+            <p><a href="../">HOME</a> &gt; <span>이벤트 목록</span></p>
         </div>
         <section class="page"><div class="page_wrap">
-            <ul class="card_con">
             <%
                 for(Event event: eventList){
                     pageContext.setAttribute("event", event);
             %>
-                <li class="card">
+                <div class="card" style="width: 18rem; margin: 10px;">
                     <a href="/event/eventing_get.jsp?eno=<%=event.getEno()%>">
                     <%if(event.getImg_name()!=null){%>
                     <img class="card-img-top" src="/event/event_img/${event.img_name}.jpg" alt="eventing">
@@ -83,10 +86,9 @@
                         </p>
                     </div>
                     </a>
-                </li>
+                </div>
 
             <%}%>
-            </ul>
         </div></section>
     </div>
     <footer class="ft" id="ft">
