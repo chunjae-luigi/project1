@@ -22,10 +22,11 @@
         pstmt.setString(2, tel);
         pstmt.setString(3, id);
         cnt = pstmt.executeUpdate();
+        String path = request.getContextPath();
         if(cnt>0){
-            response.sendRedirect("/");
+            response.sendRedirect(path);
         } else {
-            response.sendRedirect("/member/mypage.jsp");
+            response.sendRedirect(path+"/member/mypage.jsp");
         }
     } catch(SQLException e) {
         System.out.println("SQL 구문이 처리되지 못했습니다.");

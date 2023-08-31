@@ -31,7 +31,8 @@
         if(rs.next()){
             session.setAttribute("id", id);
             session.setAttribute("name", rs.getString("name"));
-            response.sendRedirect("/");
+            String path = request.getContextPath();
+            response.sendRedirect(path);
         } else {
             out.println("<script>alert('아이디 또는 비밀번호를 잘못 입력하였습니다.');history.go(-1);</script>");
         }

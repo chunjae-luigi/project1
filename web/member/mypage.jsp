@@ -88,8 +88,8 @@
                     </tbody>
                 </table>
                 <div class="btn_group">
-                    <a href="modifyMember.jsp?id=<%=myId %>" class="inBtn inBtn1">정보 수정</a>
-                    <a href="removeMemberPro.jsp?id=<%=mem.getId()%>" class="inBtn inBtn2">회원 탈퇴</a>
+                    <a href="<%=headPath%>/member/modifyMember.jsp?id=<%=myId %>" class="inBtn inBtn1">정보 수정</a>
+                    <a href="<%=headPath%>/member/removeMemberPro.jsp?id=<%=mem.getId()%>" class="inBtn inBtn2">회원 탈퇴</a>
                 </div>
             </div>
         </section>

@@ -95,10 +95,10 @@
                 </div>
                 <div class="btn_group">
                     <% if(sid != null && (sid.equals("admin") || sid.equals(bd.getAuthor()))) { %>
-                    <a href="modifyBoard.jsp?bno=<%=bno %>" class="inBtn inBtn1">자유게시판 수정</a>
-                    <a href="removeBoardPro.jsp?bno=<%=bno %>&author=<%=bd.getAuthor() %>&type=2" class="inBtn inBtn2">자유게시판 삭제</a>
+                    <a href="<%=headerPath%>/board/modifyBoard.jsp?bno=<%=bno %>" class="inBtn inBtn1">자유게시판 수정</a>
+                    <a href="<%=headerPath%>/board/removeBoardPro.jsp?bno=<%=bno %>&author=<%=bd.getAuthor() %>&type=2" class="inBtn inBtn2">자유게시판 삭제</a>
                     <% } %>
-                    <a href="listBoard.jsp" class="inBtn inBtn1">자유게시판 목록</a>
+                    <a href="<%=headerPath%>/board/listBoard.jsp" class="inBtn inBtn1">자유게시판 목록</a>
                 </div>
                 <%@include file="../dat/datList.jsp"%>
             </div>

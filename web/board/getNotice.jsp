@@ -96,10 +96,10 @@
                 </div>
                 <div class="btn_group">
                 <% if(sid != null && sid.equals("admin")) { %>
-                    <a href="modifyNotice.jsp?bno=<%=bno %>" class="inBtn inBtn1">공지 수정</a>
-                    <a href="removeBoardPro.jsp?bno=<%=bno %>&author=<%=bd.getAuthor() %>&type=1" class="inBtn inBtn2">공지 삭제</a>
+                    <a href="<%=headerPath%>/board/modifyNotice.jsp?bno=<%=bno %>" class="inBtn inBtn1">공지 수정</a>
+                    <a href="<%=headerPath%>/board/removeBoardPro.jsp?bno=<%=bno %>&author=<%=bd.getAuthor() %>&type=1" class="inBtn inBtn2">공지 삭제</a>
                 <% } %>
-                    <a href="listNotice.jsp" class="inBtn inBtn1">공지 목록</a>
+                    <a href="<%=headerPath%>/board/listNotice.jsp" class="inBtn inBtn1">공지 목록</a>
                 </div>
             </div>
         </section>

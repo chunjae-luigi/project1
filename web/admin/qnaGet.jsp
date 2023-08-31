@@ -98,12 +98,12 @@
                     답변을 등록한 사람(관리자포함)만 답변글 삭제,
                     답변글 버튼 수정 -->
                 <!-- 모든 사용자 목록 버튼 추가 -->
-                <a href="qnaList.jsp" class="inBtn inBtn1">목록</a>
+                <a href="<%=headPath%>/admin/qnaList.jsp" class="inBtn inBtn1">목록</a>
                 <% if(qna.getLev()==0) { %>
-                <a href="qnaAddQuestion.jsp?lev=1&par=<%=qna.getQno() %>" class="inBtn inBtn2">답변하기</a>
+                <a href="<%=headPath%>/admin/qnaAddQuestion.jsp?lev=1&par=<%=qna.getQno() %>" class="inBtn inBtn2">답변하기</a>
                 <% } else { %>
-                <a href="qnaUpdate.jsp?qno=<%=qna.getQno() %>" class="inBtn inBtn2">답변 수정하기</a>
-                <a href="qnaDel.jsp?qno=<%=qna.getQno() %>&lev=1" class="inBtn inBtn1">답변 삭제하기</a>
+                <a href="<%=headPath%>/admin/qnaUpdate.jsp?qno=<%=qna.getQno() %>" class="inBtn inBtn2">답변 수정하기</a>
+                <a href="<%=headPath%>/admin/qnaDel.jsp?qno=<%=qna.getQno() %>&lev=1" class="inBtn inBtn1">답변 삭제하기</a>
                 <% } %>
             </div>
         </div>

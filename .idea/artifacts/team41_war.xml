@@ -1,11 +1,11 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="project1:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/project1_war_exploded</output-path>
+  <artifact type="exploded-war" name="team41_war">
+    <output-path>$PROJECT_DIR$/out/artifacts/team41_war</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="project1/web/Web" />
+      <element id="javaee-facet-resources" facet="team41/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="project1" />
+          <element id="module-output" name="team41" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="apache.tomcat.servlet.api" />

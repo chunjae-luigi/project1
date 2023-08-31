@@ -52,10 +52,11 @@
     pstmt.setBoolean(5, status);
     pstmt.setInt(6, eno);
     int cnt = pstmt.executeUpdate();
+    String path = request.getContextPath();
 
     if(cnt>0){
         System.out.println("정상적으로 수정되었습니다.");
-        response.sendRedirect("/event/admin_event_list.jsp");
+        response.sendRedirect(path+"/admin/admin_event_list.jsp");
     } else{
         System.out.println("수정이 완료되지 않았습니다.");
     }

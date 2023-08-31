@@ -30,11 +30,13 @@
             scriptStr = "<script>";
             scriptStr += "history.go(-1);";
             scriptStr += "</script>";
+
+            String path = request.getContextPath();
             if (cnt > 0) {
                 if(boardType == 1) {
-                    response.sendRedirect("listNotice.jsp");
+                    response.sendRedirect(path+"/board/listNotice.jsp");
                 } else if (boardType == 2) {
-                    response.sendRedirect("listBoard.jsp");
+                    response.sendRedirect(path+"/board/listBoard.jsp");
                 } else {
                     out.println("<script>location.href='/';</script>");
                 }

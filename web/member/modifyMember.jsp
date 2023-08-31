@@ -54,7 +54,7 @@
             <h2>마이페이지</h2>
         </div>
         <div class="breadcrumb">
-            <p><a href="/"> HOME </a> &gt; <a href="/member/mypage.jsp"> 마이페이지 </a> &gt; <span> 회원 정보 수정 </span></p>
+            <p><a href="#"> HOME </a> &gt; <a href="<%=headPath%>/member/mypage.jsp"> 마이페이지 </a> &gt; <span> 회원 정보 수정 </span></p>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
@@ -82,7 +82,7 @@
                     </table>
                     <div class="btn_group">
                         <input type="submit" value="정보 수정" class="inBtn inBtn1">
-                        <a href="/member/mypage.jsp" class="inBtn inBtn2">취소</a>
+                        <a href="<%=headPath%>/member/mypage.jsp" class="inBtn inBtn2">취소</a>
                     </div>
                 </form>
             </div>

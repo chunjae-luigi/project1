@@ -38,8 +38,10 @@
                     pstmt = conn.prepareStatement(sql);
                     pstmt.setInt(1, bno);
                     cnt = pstmt.executeUpdate();
+
+                    String path = request.getContextPath();
                     if(cnt > 0) {
-                        response.sendRedirect("listBoard.jsp");
+                        response.sendRedirect(path+"listBoard.jsp");
                     } else {
                         System.out.println("실패");
                     }

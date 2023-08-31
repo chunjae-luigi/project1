@@ -71,9 +71,9 @@
                     <td class="item1"><%=tot %></td>
                     <td class="item2">
                         <% if(q.getLev()==0) { %>
-                        <a href="qnaGet.jsp?qno=<%=q.getQno()%>"><%=q.getTitle() %></a>
+                        <a href="<%=headPath%>/admin/qnaGet.jsp?qno=<%=q.getQno()%>"><%=q.getTitle() %></a>
                         <% } else { %>
-                        <a style="padding-left:30px;" href="qnaGet.jsp?qno=<%=q.getQno()%>">[답변]<%=q.getTitle() %></a>
+                        <a style="padding-left:30px;" href="<%=headPath%>/admin/qnaGet.jsp?qno=<%=q.getQno()%>">[답변]<%=q.getTitle() %></a>
                         <% } %>
                     </td>
                     <td class="item3"><%=q.getAuthor()%></td>

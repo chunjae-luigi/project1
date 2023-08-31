@@ -31,11 +31,13 @@
             scriptStr = "<script>";
             scriptStr += "history.go(-1);";
             scriptStr += "</script>";
+
+            String path = request.getContextPath();
             if(cnt > 0){
                 if(type == 1) {
-                    response.sendRedirect("getNotice.jsp?bno="+bno);
+                    response.sendRedirect(path+"getNotice.jsp?bno="+bno);
                 } else if(type == 2) {
-                    response.sendRedirect("getBoard.jsp?bno="+bno);
+                    response.sendRedirect(path+"getBoard.jsp?bno="+bno);
                 } else {
                     out.println("<script>location.href='/';</script>");
                 }

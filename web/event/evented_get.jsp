@@ -88,7 +88,7 @@
                     <tr>
                         <td colspan="2">
                             <%if(event.getImg_name()!=null){%>
-                            <img src="/event/event_img/${event.img_name}.jpg" alt="">
+                            <img src="<%=headerPath%>/event/event_img/${event.img_name}.jpg" alt="">
                             <%}%>
                             <%=event.getContent()%>
                         </td>

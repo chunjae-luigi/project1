@@ -67,11 +67,11 @@
                     pageContext.setAttribute("event", event);
             %>
                 <li class="card">
-                    <a href="/event/eventing_get.jsp?eno=<%=event.getEno()%>">
+                    <a href="<%=headPath%>/event/eventing_get.jsp?eno=<%=event.getEno()%>">
                     <%if(event.getImg_name()!=null){%>
-                    <img class="card-img-top" src="/event/event_img/${event.img_name}.jpg" alt="eventing">
+                    <img class="card-img-top" src="<%=headPath%>/event/event_img/${event.img_name}.jpg" alt="eventing">
                     <%} else{%>
-                    <img class="card-img-top" src="/event/event_img/0.jpg" alt="img_not_found">
+                    <img class="card-img-top" src="<%=headPath%>/event/event_img/0.jpg" alt="img_not_found">
                     <%}%>
                     <div class="card-body">
                         <h5 class="card-title"><%=event.getTitle()%></h5>

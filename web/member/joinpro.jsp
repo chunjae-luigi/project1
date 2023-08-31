@@ -39,10 +39,11 @@
         pstmt.setString(4, tel);
         pstmt.setString(5, email);
         cnt = pstmt.executeUpdate();
+        String path = request.getContextPath();
         if(cnt>0){
-            response.sendRedirect("/member/login.jsp");
+            response.sendRedirect(path+"/member/login.jsp");
         } else {
-            response.sendRedirect("/member/join.jsp");
+            response.sendRedirect(path+"/member/join.jsp");
         }
     } catch(SQLException e) {
         System.out.println("SQL 구문이 처리되지 못했습니다.");

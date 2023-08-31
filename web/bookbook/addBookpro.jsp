@@ -30,10 +30,12 @@
 
     int cnt = pstmt.executeUpdate();
 
+    String path = request.getContextPath();
+
     if(cnt>0){
-        response.sendRedirect("Booklit.jsp");
+        response.sendRedirect(path+"/bookbook/Booklit.jsp");
     } else {
-        response.sendRedirect("addBook.jsp");
+        response.sendRedirect(path"/bookbook/addBook.jsp");
     }
     con.close(pstmt, conn);
 %>

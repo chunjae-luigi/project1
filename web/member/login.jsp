@@ -31,7 +31,7 @@
             <div class="page_wrap">
                 <h2 class="page_tit">로그인</h2>
                 <div class="login_area">
-                    <form action="loginpro.jsp" id="login_frm" class="frm">
+                    <form action="<%=headPath%>/member/loginpro.jsp" id="login_frm" class="frm">
                         <table class="tb1">
                             <tbody>
                             <tr>

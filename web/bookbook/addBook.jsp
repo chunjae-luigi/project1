@@ -19,12 +19,12 @@
             <h2>도서</h2>
         </div>
         <div class="breadcrumb">
-            <p><a href="/">HOME</a> &gt; <a href="./Booklit.jsp">온라인 서점</a> &gt; <span>온라인 서점 책 올리기</span></p>
+            <p><a href="/">HOME</a> &gt; <a href="<%=headerPath%>/bookbook/Booklit.jsp">온라인 서점</a> &gt; <span>온라인 서점 책 올리기</span></p>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
                 <h2 class="page_tit">도서 추가하기</h2>
-                <form action="addBookpro.jsp" method="post">
+                <form action="<%=headerPath%>/bookbook/addBookpro.jsp" method="post">
                     <table class="table tb2">
                         <tbody>
                         <tr>

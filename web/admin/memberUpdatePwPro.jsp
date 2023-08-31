@@ -30,8 +30,9 @@
         pstmt.setString(1, pw);
         pstmt.setString(2, id);
         int cnt = pstmt.executeUpdate();
+        String path = request.getContextPath();
         if(cnt > 0) {
-            response.sendRedirect("/admin/memberList.jsp");
+            response.sendRedirect(path+"/admin/memberList.jsp");
         } else {
             out.println("<script>alert('변경에 실패하였습니다.');history.go(-1);</script>");
         }

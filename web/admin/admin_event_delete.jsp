@@ -37,7 +37,8 @@
         }
     }
 
-    response.sendRedirect("/event/admin_event_list.jsp");
+    String path = request.getContextPath();
+    response.sendRedirect(path+"/admin/admin_event_list.jsp");
 
     con.close(rs, pstmt, conn);
 

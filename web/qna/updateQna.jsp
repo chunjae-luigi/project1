@@ -61,12 +61,12 @@
             <h2>커뮤니티</h2>
         </div>
         <div class="breadcrumb">
-            <p><a href="/">HOME</a> &gt; <a href="qnaList.jsp">질문 및 답변</a> &gt; <span>질문 및 답변 수정보기</span></p>
+            <p><a href="#">HOME</a> &gt; <a href="<%=headPath%>/qna/qnaList.jsp">질문 및 답변</a> &gt; <span>질문 및 답변 수정보기</span></p>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
                 <h2 class="page_tit"><%=sel %> 글 수정보기</h2>
-                <form action="updateQnaPro.jsp" method="post">
+                <form action="<%=headPath%>/qna/updateQnaPro.jsp" method="post">
                     <table class="table tb2" id="myTable">
                         <tbody>
                         <!-- 6. 해당 글번호에 대한 글 상세내용 출력 -->
@@ -105,7 +105,7 @@
                         </tbody>
                     </table>
                     <div class="btn_group">
-                        <a href="/qna/qnaList.jsp" class="inBtn inBtn1">목록</a>
+                        <a href="<%=headPath%>/qna/qnaList.jsp" class="inBtn inBtn1">목록</a>
                         <% if(sid!=null && (sid.equals("admin") || sid.equals(qna.getAuthor()))) { %>
                         <input type="submit" class="inBtn inBtn2" value="<%=sel %> 수정하기">
                         <% } %>

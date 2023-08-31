@@ -41,7 +41,7 @@
             <div class="dat_top">
                 <p class="dat_writer"><%=num %>. <%=d.getId() %><span class="dat_date"><%=d.getResdate() %></span></p>
                 <% if(checkSid!=null && (checkSid.equals("admin") || checkSid.equals(d.getId()))) {%>
-                <a href="../dat/deldat.jsp?dno=<%=d.getDno() %>&par=<%=d.getPar() %>" class="dat_btn">삭제하기</a>
+                <a href="<%=headerPath%>/dat/deldat.jsp?dno=<%=d.getDno() %>&par=<%=d.getPar() %>" class="dat_btn">삭제하기</a>
                 <% } %>
             </div>
             <div class="dat_con">
@@ -60,7 +60,7 @@
     <% } %>
     <% if(checkSid!=null) { %>
     <div class="dat_add">
-        <form action="../dat/datListPro.jsp" method="post">
+        <form action="<%=headerPath%>/dat/datListPro.jsp" method="post">
             <input type="hidden" name="id" id="id" class="inData" value="<%=checkSid %>" readonly>
             <input type="hidden" name="bno" id="bno" class="inData" value="<%=bno %>" readonly>
             <textarea rows="1" cols="50" name="content" id="content" class="tet" maxlength="50" required placeholder="댓글내용" autofocus></textarea>

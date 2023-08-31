@@ -55,7 +55,7 @@
 
         <h2>이벤트 수정</h2>
         <div class="table_container">
-            <form action="admin_event_update_pro.jsp" method="post">
+            <form action="<%=headPath%>/admin/admin_event_update_pro.jsp" method="post">
                 <input type="hidden" name="eno" value="<%=event.getEno()%>">
                 <table class="table tb2">
                     <tbody>
@@ -90,7 +90,7 @@
                     <tr>
                         <td colspan="2">
                             <%if(event.getImg_name()!=null){%>
-                            <img src="/event/event_img/${event.img_name}.jpg" alt="">
+                            <img src="<%=headPath%>/event/event_img/${event.img_name}.jpg" alt="">
                             <%}%>
                             <input type="file" accept=".jpg" name="file">
                         </td>

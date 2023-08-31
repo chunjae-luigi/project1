@@ -35,10 +35,11 @@
 
     /* 5. 처리된 건수가 0보다 크면(성공처리가 되었으면) 목록 페이지로 이동하고,
     아니면(실패처리가 되었으면), 수정할 폼 화면으로 이동한다. */
+    String path = request.getContextPath();
     if(cnt>0){
-        response.sendRedirect("/bookbook/Booklit.jsp");
+        response.sendRedirect(path+"/bookbook/Booklit.jsp");
     } else {
-        response.sendRedirect("/bookbook/updateBook.jsp?bno="+bno);
+        response.sendRedirect(path+"/bookbook/updateBook.jsp?bno="+bno);
     }
     con.close(pstmt, conn);
 %>

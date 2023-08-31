@@ -25,7 +25,7 @@
     <div class="admin_contents" id="adminContents">
         <h2>문의 답변 글쓰기</h2>
         <div class="container">
-            <form action="qnaAddQuestionPro.jsp" method="post">
+            <form action="<%=headPath%>/admin/qnaAddQuestionPro.jsp" method="post">
                 <table class="table tb2">
                     <tbody>
                     <tr>

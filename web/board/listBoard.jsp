@@ -54,7 +54,7 @@
             <h2>커뮤니티</h2>
         </div>
         <div class="breadcrumb">
-            <p><a href="/"> HOME </a> &gt; <a href="/board/listNotice.jsp"> 커뮤니티 </a> &gt; <span> 자유게시판 </span></p>
+            <p><a href="/"> HOME </a> &gt; <a href="<%=headerPath%>/board/listNotice.jsp"> 커뮤니티 </a> &gt; <span> 자유게시판 </span></p>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
@@ -94,7 +94,7 @@
                     %>
                     <tr>
                         <td class="num"><%=num %></td>
-                        <td class="title txtLeft"><a href="getBoard.jsp?bno=<%=bd.getBno() %>"><%=title %></a></td>
+                        <td class="title txtLeft"><a href="<%=headerPath%>/board/getBoard.jsp?bno=<%=bd.getBno() %>"><%=title %></a></td>
                         <td class="date"><%=bd.getName() %></td>
                         <td class="date"><%=dateStr %></td>
                         <td class="num"><%=bd.getCnt() %></td>
@@ -113,7 +113,7 @@
                 </script>
                 <% if(sid != null) { %>
                 <div class="btn_group">
-                    <a href="addBoard.jsp" class="inBtn inBtn1">자유게시판 등록</a>
+                    <a href="<%=headerPath%>/board/addBoard.jsp" class="inBtn inBtn1">자유게시판 등록</a>
                 </div>
                 <% } %>
             </div>

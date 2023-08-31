@@ -39,7 +39,7 @@
         <section class="page" id="page1">
             <div class="page_wrap">
                 <h2 class="page_tit">질문 및 답변 상세보기</h2>
-                <form action="addQuestionPro.jsp" method="post">
+                <form action="<%=headPath%>/qna/addQuestionPro.jsp" method="post">
                     <table class="table tb2">
                         <tbody>
                         <tr>

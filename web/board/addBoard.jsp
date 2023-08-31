@@ -16,12 +16,12 @@
             <h2>자유게시판</h2>
         </div>
         <div class="breadcrumb">
-            <p><a href="/"> HOME </a> &gt; <a href="<%=headerPath%>/board/listNotice.jsp"> 커뮤니티 </a> &gt; <span> 자유게시판</span></p>
+            <p><a href="#"> HOME </a> &gt; <a href="<%=headerPath%>/board/listNotice.jsp"> 커뮤니티 </a> &gt; <span> 자유게시판</span></p>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
                 <h2 class="page_tit">자유게시판 등록하기</h2>
-                <form action="addBoardPro.jsp" method="post">
+                <form action="<%=headerPath%>/board/addBoardPro.jsp" method="post">
                     <input type="hidden" value="2" name="boardType" id="boardType">
                     <table class="table tb2">
                         <tbody>

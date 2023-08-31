@@ -54,7 +54,7 @@
             <h2>커뮤니티</h2>
         </div>
         <div class="breadcrumb">
-            <p><a href="/">HOME</a> &gt; <a href="qnaList.jsp">질문 및 답변</a> &gt; <span>질문 및 답변 상세보기</span></p>
+            <p><a href="#">HOME</a> &gt; <a href="<%=headPath%>/qna/qnaList.jsp">질문 및 답변</a> &gt; <span>질문 및 답변 상세보기</span></p>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
@@ -112,11 +112,11 @@
                         답변글 버튼 수정 -->
                     <!-- 모든 사용자 목록 버튼 추가 -->
 
-                    <a href="qnaList.jsp" class="inBtn inBtn1">목록</a>
+                    <a href="<%=headPath%>/qna/qnaList.jsp" class="inBtn inBtn1">목록</a>
                     <% if(qna.getLev()==0) { %>
                     <% if(sid!=null && (sid.equals("admin") || sid.equals(qna.getAuthor()))) { %>
-                    <a href="updateQna.jsp?qno=<%=qna.getQno() %>" class="inBtn inBtn2">질문 수정하기</a>
-                    <a href="delQna.jsp?qno=<%=qna.getQno() %>&lev=0" class="inBtn inBtn1">질문 삭제하기</a>
+                    <a href="<%=headPath%>/qna/updateQna.jsp?qno=<%=qna.getQno() %>" class="inBtn inBtn2">질문 수정하기</a>
+                    <a href="<%=headPath%>/qna/delQna.jsp?qno=<%=qna.getQno() %>&lev=0" class="inBtn inBtn1">질문 삭제하기</a>
                     <% } %>
                     <% } %>
                 </div>

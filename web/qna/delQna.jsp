@@ -25,9 +25,10 @@
     pstmt = conn.prepareStatement(sql);
     pstmt.setInt(1, qno);
     int cnt = pstmt.executeUpdate();
+    String path = request.getContextPath();
     if(cnt>0){
         System.out.println("글이 삭제되었습니다.");
-        response.sendRedirect("/qna/qnaList.jsp");
+        response.sendRedirect(path+"/qna/qnaList.jsp");
     } else {
         System.out.println("글 삭제가 실패되었습니다.");
         //response.sendRedirect("/qna/updateQna.jsp?qno="+qno);

@@ -21,7 +21,7 @@
         <section class="page" id="page1">
             <div class="page_wrap">
                 <h2 class="page_tit">공지사항 등록하기</h2>
-                <form action="addBoardPro.jsp" method="post">
+                <form action="<%=headerPath%>/board/addBoardPro.jsp" method="post">
                     <input type="hidden" value="1" name="boardType" id="boardType">
                     <table class="table tb2">
                         <tbody>

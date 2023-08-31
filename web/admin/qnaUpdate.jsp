@@ -56,7 +56,7 @@
     </header>
     <div class="admin_contents" id="adminContents">
         <h2><%=sel %> 글 수정보기</h2>
-        <form action="qnaUpdatePro.jsp" method="post">
+        <form action="<%=headPath%>/admin/qnaUpdatePro.jsp" method="post">
             <table class="table tb2" id="myTable">
                 <tbody>
                 <!-- 6. 해당 글번호에 대한 글 상세내용 출력 -->
@@ -91,7 +91,7 @@
                 </tbody>
             </table>
             <div class="btn_group">
-                <a href="/qna/qnaList.jsp" class="inBtn inBtn1">목록</a>
+                <a href="<%=headPath%>/admin/qnaList.jsp" class="inBtn inBtn1">목록</a>
                 <input type="submit" class="inBtn inBtn2" value="<%=sel %> 수정하기">
             </div>
         </form>

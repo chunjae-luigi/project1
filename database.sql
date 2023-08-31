@@ -1,6 +1,3 @@
-CREATE DATABASE gnj;
-USE gnj;
-
 -- member
 CREATE TABLE MEMBER(
 	id VARCHAR(16) NOT NULL,   -- (아이디)

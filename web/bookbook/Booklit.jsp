@@ -130,11 +130,11 @@
         }
 
         .inBtn {margin-bottom:20px;}
-
+ 
     </style>
 
-    <link rel="stylesheet" href="../jquery.dataTables.css">
-    <script src="../jquery.dataTables.js"></script>
+    <link rel="stylesheet" href="<%=headPath%>/css/jquery.dataTables.css">
+    <script src="<%=headPath%>/js/jquery.dataTables.js"></script>
 </head>
 <body>
 <div class="container">
@@ -157,7 +157,7 @@
                          <% if(sid!=null && sid.equals("admin")) { %>
                         <a href="addBook.jsp" class="inBtn inBtn1">추가하기</a>
                          <% } else{ %>
-                        <a href="/qna/qnaList.jsp" class="inBtn inBtn1">배송/주문 관련 문의하기</a>
+                        <a href="<%=headPath%>/qna/qnaList.jsp" class="inBtn inBtn1">배송/주문 관련 문의하기</a>
                         <% } %>
                     <br>
                     <button type="button" class="btn prev">&lt;</button>
@@ -169,8 +169,8 @@
                 <ul class="card_lst">
                     <% for(Book bk : bookList) { %>
                     <li>
-                        <a href="/bookbook/getBook.jsp?bno=<%=bk.getBno()%>">
-                            <div class="thumb_box" style="background-image: url('/image/book/iiim<%=bk.getBno()%>.jpg');"></div>
+                        <a href="<%=headPath%>/bookbook/getBook.jsp?bno=<%=bk.getBno()%>">
+                            <div class="thumb_box" style="background-image: url('<%=headerPath%>/image/book/iiim<%=bk.getBno()%>.jpg');"></div>
                             <p class="thumb_tit"><%=bk.getTitle()%></p>
                         </a>
                     </li>

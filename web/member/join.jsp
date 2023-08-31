@@ -51,7 +51,7 @@
             <div class="page_wrap">
                 <h2 class="page_tit">회원가입</h2>
                 <br><br><br>
-                <form name="frm1" class="frm" action="joinpro.jsp" method="post" onsubmit="return inform(this)">
+                <form name="frm1" class="frm" action="<%=headPath%>/member/joinpro.jsp" method="post" onsubmit="return inform(this)">
                     <div class="join">
                         <table>
                             <colgroup>

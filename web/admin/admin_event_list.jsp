@@ -61,11 +61,11 @@
                     pageContext.setAttribute("event", event);
             %>
             <li class="card">
-                <a href="/admin/admin_event_get.jsp?eno=<%=event.getEno()%>">
+                <a href="<%=headPath%>/admin/admin_event_get.jsp?eno=<%=event.getEno()%>">
                     <%if(event.getImg_name()!=null){%>
-                    <img class="card-img-top" src="/admin/event_img/${event.img_name}.jpg" alt="eventing">
+                    <img class="card-img-top" src="<%=headPath%>/admin/event_img/${event.img_name}.jpg" alt="eventing">
                     <%} else{%>
-                    <img class="card-img-top" src="/admin/event_img/0.jpg" alt="img_not_found">
+                    <img class="card-img-top" src="<%=headPath%>/admin/event_img/0.jpg" alt="img_not_found">
                     <%}%>
                     <div class="card-body">
                         <h5 class="card-title"><input type="checkbox" name="isdelete" value="<%=event.getEno()%>"> <%=event.getTitle()%></h5>
@@ -81,7 +81,7 @@
             </ul>
         </form></div></section>
         <div class="btn_group">
-            <a href="admin_event_add.jsp" class="inBtn inBtn1">이벤트 추가</a>
+            <a href="<%=headPath%>/admin/admin_event_add.jsp" class="inBtn inBtn1">이벤트 추가</a>
             <input type="submit" class="inBtn inBtn2" value="이벤트 삭제">
         </div>
     </div>

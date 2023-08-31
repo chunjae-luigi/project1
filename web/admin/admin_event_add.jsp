@@ -15,12 +15,12 @@
 <body>
 <div class="admin_wrap">
     <header class="admin_hd" id="adminHd">
-        <%@ include file="/admin/adminHeader.jsp" %>
+        <%@ include file="<%=headPath%>/admin/adminHeader.jsp" %>
     </header>
     <div class="admin_contents" id="adminContents">
         <h2>이벤트 추가</h2>
         <div class="table_container">
-            <form action="admin_event_add_pro.jsp" method="post">
+            <form action="<%=headPath%>/admin/admin_event_add_pro.jsp" method="post">
                 <table class="table tb2">
                     <tbody>
                     <tr>

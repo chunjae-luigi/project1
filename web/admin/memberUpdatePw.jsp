@@ -54,7 +54,7 @@
     <div class="admin_contents" id="adminContents">
         <h2><%= mem.getName() %>님의 비밀번호 변경</h2>
         <div class="container">
-            <form action="memberUpdatePwPro.jsp" method="post">
+            <form action="<%=headPath%>/admin/memberUpdatePwPro.jsp" method="post">
                 <input type="hidden" name="id" id="id" value="<%=mem.getId() %>">
                 <table class="table tb2">
                     <tbody>

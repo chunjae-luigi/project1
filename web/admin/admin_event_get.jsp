@@ -99,7 +99,7 @@
                 });
             </script>
             <div class="btn_group">
-                <a href="admin_event_update.jsp?eno=<%=event.getEno()%>" class="inBtn inBtn1">글 수정하기</a>
+                <a href="<%=headPath%>/admin/admin_event_update.jsp?eno=<%=event.getEno()%>" class="inBtn inBtn1">글 수정하기</a>
             </div>
         </div>
     </div>

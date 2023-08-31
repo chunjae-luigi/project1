@@ -81,7 +81,7 @@
                     <td class="tel"><%=mem.getTel() %></td>
                     <td class="date"><%=dateStr %></td>
                     <td class="etc">
-                        <a href="memberUpdatePw.jsp?id=<%=mem.getId()%>" class="inBtn inBtn1">비밀번호 변경</a>
+                        <a href="<%=headPath%>/admin/memberUpdatePw.jsp?id=<%=mem.getId()%>" class="inBtn inBtn1">비밀번호 변경</a>
                         <a href="../member/removeMemberPro.jsp?id=<%=mem.getId()%>" class="inBtn inBtn2">회원 탈퇴</a>
                     </td>
                 </tr>

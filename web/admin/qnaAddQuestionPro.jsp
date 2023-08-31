@@ -36,15 +36,17 @@
         cnt++;
     }
 
+    String path = request.getContextPath();
+
     if(cnt==2){
         System.out.println("질문 글이 등록되었습니다.");
-        response.sendRedirect("/admin/qnaList.jsp");
+        response.sendRedirect(path+"/admin/qnaList.jsp");
     } else if(cnt==1){
         System.out.println("답변 글이 등록되었습니다.");
-        response.sendRedirect("/admin/qnaList.jsp");
+        response.sendRedirect(path+"/admin/qnaList.jsp");
     } else {
         System.out.println("질문 및 답변 등록이 실패되었습니다.");
-        response.sendRedirect("/admin/qnaAddQuestion.jsp?lev="+lev+"&par="+par);
+        response.sendRedirect(path+"/admin/qnaAddQuestion.jsp?lev="+lev+"&par="+par);
         //out.println("<script>history.go(-1);</script>");
     }
 

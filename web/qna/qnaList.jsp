@@ -56,7 +56,7 @@
             <h2>커뮤니티</h2>
         </div>
         <div class="breadcrumb">
-            <p><a href="/">HOME</a> &gt; <a href="qnaList.jsp">질문 및 답변</a> &gt; <span>질문 및 답변 목록</span></p>
+            <p><a href="#">HOME</a> &gt; <a href="<%=headPath%>/qna/qnaList.jsp">질문 및 답변</a> &gt; <span>질문 및 답변 목록</span></p>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
@@ -81,9 +81,9 @@
                         <td class="item1"><%=tot %></td>
                         <td class="item2 txtLeft">
                             <% if(q.getLev()==0) { %>
-                            <a href="getQna.jsp?qno=<%=q.getQno()%>"><%=q.getTitle() %></a>
+                            <a href="<%=headPath%>/qna/getQna.jsp?qno=<%=q.getQno()%>"><%=q.getTitle() %></a>
                             <% } else { %>
-                            <a style="padding-left:30px;" href="getQna.jsp?qno=<%=q.getQno()%>">[답변]<%=q.getTitle() %></a>
+                            <a style="padding-left:30px;" href="<%=headPath%>/qna/getQna.jsp?qno=<%=q.getQno()%>">[답변]<%=q.getTitle() %></a>
                             <% } %>
                         </td>
                         <td class="item3"><%=q.getAuthor()%></td>
@@ -100,7 +100,7 @@
                 </table>
                 <% if(sid != null) { %>
                 <div class="btn_group">
-                    <a href="addQuestion.jsp" class="inBtn inBtn1">문의하기</a>
+                    <a href="<%=headPath%>/qna/addQuestion.jsp" class="inBtn inBtn1">문의하기</a>
                 </div>
                 <% } %>
             </div>

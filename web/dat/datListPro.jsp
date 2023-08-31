@@ -31,7 +31,9 @@
             d.setContent(rs.getString("content"));
             d.setResdate(rs.getString("resdate"));
         }
-        response.sendRedirect("../board/getBoard.jsp?bno="+bno);
+
+        String path = request.getContextPath();
+        response.sendRedirect(path+"/board/getBoard.jsp?bno="+bno);
 
     } catch (SQLException e) {
         System.out.println("SQL구문 오류");

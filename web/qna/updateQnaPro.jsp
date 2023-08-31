@@ -26,9 +26,10 @@
 
     int cnt = pstmt.executeUpdate();
 
+    String path = request.getContextPath();
     if(cnt>0){
         System.out.println("글이 수정되었습니다.");
-        response.sendRedirect("/qna/qnaList.jsp");
+        response.sendRedirect(path+"/qna/qnaList.jsp");
     } else {
         System.out.println("글 수정이 실패되었습니다.");
         //response.sendRedirect("/qna/updateQna.jsp?qno="+qno);

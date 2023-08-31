@@ -52,7 +52,7 @@
             <h2>커뮤니티</h2>
         </div>
         <div class="breadcrumb">
-            <p><a href="/"> HOME </a> &gt; <a href="/board/listNotice.jsp"> 커뮤니티 </a> &gt; <span> 공지사항 </span></p>
+            <p><a href="/"> HOME </a> &gt; <a href="<%=headerPath%>/board/listNotice.jsp"> 커뮤니티 </a> &gt; <span> 공지사항 </span></p>
         </div>
         <section class="page" id="page1">
             <div class="page_wrap">
@@ -90,7 +90,7 @@
                     %>
                     <tr>
                         <td class="num"><%=num %></td>
-                        <td class="title txtLeft"><a href="getNotice.jsp?bno=<%=bd.getBno() %>"><%=title %></a></td>
+                        <td class="title txtLeft"><a href="<%=headerPath%>/board/getNotice.jsp?bno=<%=bd.getBno() %>"><%=title %></a></td>
                         <td class="date"><%=dateStr %></td>
                         <td class="num"><%=bd.getCnt() %></td>
                     </tr>
@@ -108,7 +108,7 @@
                 </script>
                 <% if(sid != null && sid.equals("admin")) { %>
                 <div class="btn_group">
-                    <a href="addNotice.jsp" class="inBtn inBtn1">공지 등록</a>
+                    <a href="<%=headerPath%>/board/addNotice.jsp" class="inBtn inBtn1">공지 등록</a>
                 </div>
                 <% } %>
             </div>
